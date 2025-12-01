@@ -7,6 +7,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [showGetStarted, setShowGetStarted] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
   const { language, changeLanguage, t } = useLanguage();
 
@@ -23,6 +24,18 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.lang-dropdown') && showLangMenu) {
+        setShowLangMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showLangMenu]);
+
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -36,7 +49,7 @@ const Navbar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? theme === 'dark' ? "bg-gray-900 shadow-md" : "bg-white shadow-md"
+          ? theme === 'dark' ? "bg-gray-900/95 backdrop-blur-lg shadow-lg shadow-gray-900/50" : "bg-white/95 backdrop-blur-lg shadow-lg"
           : "bg-transparent"
       }`}
     >
@@ -135,7 +148,7 @@ const Navbar = () => {
             </button>
 
             {/* Language Selector */}
-            <div className="relative">
+            <div className="relative lang-dropdown">
               <button
                 onClick={() => setShowLangMenu(!showLangMenu)}
                 className={`flex items-center space-x-2 px-4 py-2.5 rounded-lg transition-all hover:scale-105 ${
@@ -146,11 +159,11 @@ const Navbar = () => {
               >
                 <span className="text-lg">{currentLang.flag}</span>
                 <span className="font-medium">{currentLang.name}</span>
-                <span className="text-xs">▼</span>
+                <span className={`text-xs transition-transform ${showLangMenu ? 'rotate-180' : ''}`}>▼</span>
               </button>
 
               {showLangMenu && (
-                <div className={`absolute right-0 mt-2 w-44 rounded-xl shadow-xl overflow-hidden ${
+                <div className={`absolute right-0 mt-2 w-44 rounded-xl shadow-xl overflow-hidden z-50 ${
                   theme === 'dark' ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'
                 }`}>
                   <div className="py-2">
@@ -184,14 +197,15 @@ const Navbar = () => {
               onMouseLeave={() => setShowGetStarted(false)}
             >
               <button
-                className="bg-gradient-to-r from-blue-500 to-blue-600 text-white px-6 py-2.5 rounded-lg font-semibold hover:from-blue-600 hover:to-blue-700 transition-all hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2"
+                onClick={() => setShowGetStarted(!showGetStarted)}
+                className="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-2.5 rounded-xl font-semibold hover:from-blue-700 hover:to-blue-800 transition-all hover:scale-105 shadow-lg hover:shadow-xl flex items-center space-x-2"
               >
                 <span>Get Started</span>
-                <span className="text-xs">▼</span>
+                <span className={`text-xs transition-transform ${showGetStarted ? 'rotate-180' : ''}`}>▼</span>
               </button>
 
               {showGetStarted && (
-                <div className={`absolute right-0 mt-2 w-56 rounded-xl shadow-2xl overflow-hidden ${
+                <div className={`absolute right-0 mt-2 w-64 rounded-xl shadow-2xl overflow-hidden z-50 ${
                   theme === 'dark' ? 'bg-gray-800 border border-gray-700' : 'bg-white border border-gray-200'
                 }`}>
                   <div className="py-2">
@@ -199,16 +213,16 @@ const Navbar = () => {
                       href="https://adshamper.com/user/login/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`block px-5 py-3 transition-all ${
+                      className={`block px-5 py-3.5 transition-all ${
                         theme === 'dark' 
-                          ? 'text-gray-300 hover:bg-gray-700 hover:text-white' 
+                          ? 'text-gray-300 hover:bg-blue-600 hover:text-white' 
                           : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
                       }`}
                     >
                       <div className="flex items-center space-x-3">
                         <span className="text-2xl">🔐</span>
                         <div>
-                          <div className="font-semibold">{t.nav.login}</div>
+                          <div className="font-semibold text-base">{t.nav.login}</div>
                           <div className="text-xs opacity-75">Access your account</div>
                         </div>
                       </div>
@@ -220,16 +234,16 @@ const Navbar = () => {
                       href="https://adshamper.com/user/register/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className={`block px-5 py-3 transition-all ${
+                      className={`block px-5 py-3.5 transition-all ${
                         theme === 'dark' 
-                          ? 'text-gray-300 hover:bg-gray-700 hover:text-white' 
+                          ? 'text-gray-300 hover:bg-blue-600 hover:text-white' 
                           : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'
                       }`}
                     >
                       <div className="flex items-center space-x-3">
                         <span className="text-2xl">✨</span>
                         <div>
-                          <div className="font-semibold">{t.nav.signUp}</div>
+                          <div className="font-semibold text-base">{t.nav.signUp}</div>
                           <div className="text-xs opacity-75">Create new account</div>
                         </div>
                       </div>
@@ -241,12 +255,25 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center gap-3">
+            {/* Theme Toggle Mobile */}
             <button
-              className={`p-2 ${
+              onClick={toggleTheme}
+              className={`p-2 rounded-lg transition-all ${
                 isScrolled 
-                  ? theme === 'dark' ? "text-white" : "text-gray-900"
-                  : theme === 'dark' ? "text-white" : "text-gray-700"
+                  ? theme === 'dark' ? "text-white hover:bg-gray-800" : "text-gray-900 hover:bg-gray-100"
+                  : theme === 'dark' ? "text-white hover:bg-white/10" : "text-gray-700 hover:bg-gray-100"
+              }`}
+            >
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
+
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className={`p-2 rounded-lg transition-all ${
+                isScrolled 
+                  ? theme === 'dark' ? "text-white hover:bg-gray-800" : "text-gray-900 hover:bg-gray-100"
+                  : theme === 'dark' ? "text-white hover:bg-white/10" : "text-gray-700 hover:bg-gray-100"
               }`}
             >
               <svg
@@ -258,11 +285,117 @@ const Navbar = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
+                {mobileMenuOpen ? (
+                  <path d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
           </div>
         </div>
+
+        {/* Mobile Menu */}
+        {mobileMenuOpen && (
+          <div className={`md:hidden absolute top-full left-0 right-0 transition-all duration-300 ${
+            theme === 'dark' 
+              ? 'bg-gray-900/98 backdrop-blur-xl border-t border-gray-800' 
+              : 'bg-white/98 backdrop-blur-xl border-t border-gray-200'
+          }`}>
+            <div className="px-4 py-6 space-y-4">
+              {/* Navigation Links */}
+              <div className="space-y-2">
+                {[
+                  { label: t.nav.studio, id: 'welcome' },
+                  { label: t.nav.technology, id: 'welcome' },
+                  { label: t.nav.solutions, id: 'welcome' },
+                  { label: t.nav.company, id: 'welcome' },
+                  { label: t.nav.resources, id: 'welcome' },
+                  { label: t.nav.investors, id: 'welcome' }
+                ].map((item, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      scrollToSection(item.id);
+                      setMobileMenuOpen(false);
+                    }}
+                    className={`w-full text-left px-4 py-3 rounded-lg font-medium transition-all ${
+                      theme === 'dark' 
+                        ? 'text-white hover:bg-gray-800' 
+                        : 'text-gray-900 hover:bg-gray-100'
+                    }`}
+                  >
+                    {item.label}
+                  </button>
+                ))}
+              </div>
+
+              {/* Language Selector Mobile */}
+              <div className={`pt-4 border-t ${theme === 'dark' ? 'border-gray-800' : 'border-gray-200'}`}>
+                <div className="text-sm font-semibold mb-2 px-4 text-gray-500">Language</div>
+                <div className="space-y-1">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => {
+                        changeLanguage(lang.code);
+                        setMobileMenuOpen(false);
+                      }}
+                      className={`w-full text-left px-4 py-3 rounded-lg flex items-center space-x-3 transition-all ${
+                        language === lang.code
+                          ? theme === 'dark' ? 'bg-blue-600 text-white' : 'bg-blue-50 text-blue-600'
+                          : theme === 'dark' ? 'text-gray-300 hover:bg-gray-800' : 'text-gray-700 hover:bg-gray-100'
+                      }`}
+                    >
+                      <span className="text-lg">{lang.flag}</span>
+                      <span className="font-medium">{lang.name}</span>
+                      {language === lang.code && <span className="ml-auto">✓</span>}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Get Started Buttons Mobile */}
+              <div className={`pt-4 border-t ${theme === 'dark' ? 'border-gray-800' : 'border-gray-200'}`}>
+                <div className="space-y-3">
+                  <a
+                    href="https://adshamper.com/user/login/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`block px-4 py-3 rounded-lg transition-all ${
+                      theme === 'dark' 
+                        ? 'bg-gray-800 text-white hover:bg-gray-700' 
+                        : 'bg-gray-100 text-gray-900 hover:bg-gray-200'
+                    }`}
+                  >
+                    <div className="flex items-center space-x-3">
+                      <span className="text-2xl">🔐</span>
+                      <div>
+                        <div className="font-semibold">{t.nav.login}</div>
+                        <div className="text-xs opacity-75">Access your account</div>
+                      </div>
+                    </div>
+                  </a>
+                  
+                  <a
+                    href="https://adshamper.com/user/register/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block px-4 py-3 rounded-lg bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800 transition-all"
+                  >
+                    <div className="flex items-center space-x-3">
+                      <span className="text-2xl">✨</span>
+                      <div>
+                        <div className="font-semibold">{t.nav.signUp}</div>
+                        <div className="text-xs opacity-90">Create new account</div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );

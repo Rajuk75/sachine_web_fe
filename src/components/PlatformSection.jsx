@@ -7,8 +7,22 @@ const PlatformSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className={`py-20 ${theme === 'dark' ? 'bg-gray-900' : 'bg-gray-50'}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className={`py-20 relative overflow-hidden ${
+      theme === 'dark' 
+        ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900' 
+        : 'bg-gradient-to-b from-white via-gray-50 to-white'
+    }`}>
+      {/* Background Decoration */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className={`absolute top-20 right-10 w-72 h-72 rounded-full blur-3xl opacity-10 ${
+          theme === 'dark' ? 'bg-blue-500' : 'bg-blue-300'
+        }`}></div>
+        <div className={`absolute bottom-20 left-10 w-72 h-72 rounded-full blur-3xl opacity-10 ${
+          theme === 'dark' ? 'bg-purple-500' : 'bg-purple-300'
+        }`}></div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className={`text-4xl md:text-5xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'
@@ -23,8 +37,11 @@ const PlatformSection = () => {
         {/* Features Grid */}
         <div className="grid md:grid-cols-3 gap-8 mb-20">
           {/* Discover */}
-          <div className={`p-8 rounded-2xl ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'
-            } shadow-lg`}>
+          <div className={`p-8 rounded-2xl transition-all hover:scale-105 hover:shadow-2xl ${
+            theme === 'dark' 
+              ? 'bg-gray-800/80 backdrop-blur-sm border border-gray-700 shadow-lg shadow-blue-500/10' 
+              : 'bg-white shadow-lg shadow-blue-100/50 border border-gray-100'
+            }`}>
             <div className="text-5xl mb-4">🔍</div>
             <h3 className="text-xl font-bold mb-3">
               <span className="text-orange-500">{t.platform.discover}</span>
@@ -39,8 +56,11 @@ const PlatformSection = () => {
           </div>
 
           {/* Acquire & Engage */}
-          <div className={`p-8 rounded-2xl ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'
-            } shadow-lg`}>
+          <div className={`p-8 rounded-2xl transition-all hover:scale-105 hover:shadow-2xl ${
+            theme === 'dark' 
+              ? 'bg-gray-800/80 backdrop-blur-sm border border-gray-700 shadow-lg shadow-purple-500/10' 
+              : 'bg-white shadow-lg shadow-purple-100/50 border border-gray-100'
+            }`}>
             <div className="text-5xl mb-4">📊</div>
             <h3 className="text-xl font-bold mb-3">
               <span className="text-orange-500">{t.platform.acquire}</span>
@@ -57,8 +77,11 @@ const PlatformSection = () => {
           </div>
 
           {/* Re-engage */}
-          <div className={`p-8 rounded-2xl ${theme === 'dark' ? 'bg-gray-800' : 'bg-white'
-            } shadow-lg`}>
+          <div className={`p-8 rounded-2xl transition-all hover:scale-105 hover:shadow-2xl ${
+            theme === 'dark' 
+              ? 'bg-gray-800/80 backdrop-blur-sm border border-gray-700 shadow-lg shadow-pink-500/10' 
+              : 'bg-white shadow-lg shadow-pink-100/50 border border-gray-100'
+            }`}>
             <div className="text-5xl mb-4">⚙️</div>
             <h3 className="text-xl font-bold mb-3">
               <span className="text-orange-500">{t.platform.reengage}</span>
@@ -84,7 +107,7 @@ const PlatformSection = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
           {/* Stat 1 */}
           <div className="text-center">
-            <div className="text-5xl font-bold text-blue-500 mb-2">xx Bn+</div>
+            <div className="text-5xl font-bold text-blue-500 mb-2">12 Bn+</div>
             <div className={`font-semibold ${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'
               }`}>
               {t.platform.stat1}
@@ -93,7 +116,7 @@ const PlatformSection = () => {
 
           {/* Stat 2 */}
           <div className="text-center">
-            <div className="text-5xl font-bold text-blue-500 mb-2">xxx+</div>
+            <div className="text-5xl font-bold text-blue-500 mb-2">120+</div>
             <div className={`font-semibold ${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'
               }`}>
               {t.platform.stat2}
@@ -106,7 +129,7 @@ const PlatformSection = () => {
 
           {/* Stat 3 */}
           <div className="text-center">
-            <div className="text-5xl font-bold text-blue-500 mb-2">xxx Bn+</div>
+            <div className="text-5xl font-bold text-blue-500 mb-2">120 Bn+</div>
             <div className={`font-semibold ${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'
               }`}>
               {t.platform.stat3}
@@ -115,7 +138,7 @@ const PlatformSection = () => {
 
           {/* Stat 4 */}
           <div className="text-center">
-            <div className="text-5xl font-bold text-blue-500 mb-2">xx +</div>
+            <div className="text-5xl font-bold text-blue-500 mb-2">20 +</div>
             <div className={`font-semibold ${theme === 'dark' ? 'text-gray-300' : 'text-gray-900'
               }`}>
               {t.platform.stat4}
