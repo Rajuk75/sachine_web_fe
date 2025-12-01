@@ -1,4 +1,3 @@
-import React from "react";
 import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
 
@@ -17,8 +16,12 @@ const Footer = () => {
             <span className="footer-brand-name">AdsHamper</span>
           </div>
           <p className="footer-description">
-            {t.footer.description}
+            Adshamper Pvt. Ltd. is a dynamic marketing and advertising company based in Kolkata, India, dedicated to transforming the digital performance marketing space with innovation, technology, and a strong focus on measurable results.
           </p>
+          <div className="footer-vision">
+            <strong>🚀 Our Vision:</strong>
+            <p>To become India's most trusted performance marketing and fintech advertising network, known for delivering Proof in Performance and Power in Results.</p>
+          </div>
           <div className="footer-social">
             <span>{t.footer.followUs}</span>
             <div className="social-links">
@@ -61,20 +64,22 @@ const Footer = () => {
           <h3 className="footer-heading">{t.footer.contactInfo}</h3>
           <div className="contact-info">
             <div className="contact-item">
-              <strong>{t.footer.address}:</strong>
-              <p>123 Business Street,<br />New York, NY 10001</p>
+              <strong>📍 {t.footer.address}:</strong>
+              <p>Hooghly, West Bengal<br />Kolkata, India</p>
             </div>
             <div className="contact-item">
-              <strong>{t.footer.phone}:</strong>
-              <p>+1 (555) 123-4567<br />+1 (555) 123-4568</p>
+              <strong>📞 {t.footer.phone}:</strong>
+              <p><a href="tel:+919331156747" className="contact-link">+91 9331156747</a></p>
             </div>
             <div className="contact-item">
-              <strong>{t.footer.email}:</strong>
-              <p>info@company.com<br />support@company.com</p>
+              <strong>✉️ {t.footer.email}:</strong>
+              <p>
+                <a href="mailto:support@adshamper.com" className="contact-link">support@adshamper.com</a>
+              </p>
             </div>
             <div className="contact-item">
-              <strong>{t.footer.officeHours}:</strong>
-              <p>Monday - Friday: 9:00 AM - 6:00 PM<br />Saturday: 10:00 AM - 2:00 PM</p>
+              <strong>🏢 Company:</strong>
+              <p>Adshamper Pvt. Ltd.<br />Performance Marketing & Ad-Tech</p>
             </div>
           </div>
         </div>
@@ -163,11 +168,46 @@ const Footer = () => {
         .footer-description {
           color: #6b7280;
           line-height: 1.7;
-          margin-bottom: 24px;
+          margin-bottom: 20px;
           font-size: 15px;
         }
 
         .footer[data-theme="dark"] .footer-description {
+          color: #9ca3af;
+        }
+
+        .footer-vision {
+          margin-bottom: 24px;
+          padding: 16px;
+          background: rgba(59, 130, 246, 0.1);
+          border-left: 3px solid #3b82f6;
+          border-radius: 8px;
+        }
+
+        .footer-vision strong {
+          display: block;
+          color: #3b82f6;
+          margin-bottom: 8px;
+          font-size: 15px;
+          font-weight: 700;
+        }
+
+        .footer-vision p {
+          color: #6b7280;
+          margin: 0;
+          font-size: 14px;
+          line-height: 1.6;
+        }
+
+        .footer[data-theme="dark"] .footer-vision {
+          background: rgba(59, 130, 246, 0.15);
+        }
+
+        .footer[data-theme="dark"] .footer-vision strong {
+          color: #60a5fa;
+        }
+
+        .footer[data-theme="dark"] .footer-vision p {
           color: #9ca3af;
         }
 
@@ -287,6 +327,27 @@ const Footer = () => {
 
         .footer[data-theme="dark"] .contact-item p {
           color: #9ca3af;
+        }
+
+        .contact-link {
+          color: #3b82f6;
+          text-decoration: none;
+          font-weight: 600;
+          transition: all 0.3s;
+          display: inline-block;
+        }
+
+        .contact-link:hover {
+          color: #2563eb;
+          transform: translateX(2px);
+        }
+
+        .footer[data-theme="dark"] .contact-link {
+          color: #60a5fa;
+        }
+
+        .footer[data-theme="dark"] .contact-link:hover {
+          color: #93c5fd;
         }
 
         .footer-bottom {
