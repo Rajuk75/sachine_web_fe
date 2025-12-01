@@ -18,6 +18,8 @@ const Training = lazy(() => import("../pages/services/Training"));
 const Integration = lazy(() => import("../pages/services/Integration"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("../pages/TermsOfService"));
+const NotFound = lazy(() => import("../pages/NotFound"));
+
 const AppRoutes = () => {
   return (
     <Suspense fallback={<PageLoader />}>
@@ -38,9 +40,11 @@ const AppRoutes = () => {
           <Route path={PATHS.INTEGRATION} element={<Integration />} />
           <Route path={PATHS.PRIVACY_POLICY} element={<PrivacyPolicy />} />
           <Route path={PATHS.TERMS_OF_SERVICE} element={<TermsOfService />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </Suspense>
   );
 };
+
 export default AppRoutes;
