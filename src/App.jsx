@@ -9,7 +9,6 @@ const App = () => {
   const [currentPage, setCurrentPage] = useState('home');
 
   useEffect(() => {
-    // Simple routing based on hash
     const handleHashChange = () => {
       const hash = window.location.hash.slice(1);
       setCurrentPage(hash || 'home');
