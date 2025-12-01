@@ -93,9 +93,9 @@ const Footer = () => {
             © {new Date().getFullYear()} {t.footer.copyright}
           </div>
           <div className="footer-legal">
-            <a href="#welcome">{t.footer.privacyPolicy}</a>
-            <a href="#welcome">{t.footer.termsOfService}</a>
-            <a href="#welcome">{t.footer.sitemap}</a>
+            <a href="#privacy-policy">{t.footer.privacyPolicy}</a>
+            <a href="#terms-of-service">{t.footer.termsOfService}</a>
+            <a href="#welcome">Sitemap</a>
           </div>
         </div>
       </div>
