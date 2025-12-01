@@ -1,5 +1,6 @@
 import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
+import PATHS from "../routes/paths";
 
 const Footer = () => {
   const { theme } = useTheme();
@@ -37,12 +38,12 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-heading">{t.footer.quickLinks}</h3>
           <ul className="footer-links">
-            <li><a href="#welcome">{t.nav.studio}</a></li>
-            <li><a href="#welcome">{t.nav.technology}</a></li>
-            <li><a href="#welcome">{t.nav.solutions}</a></li>
-            <li><a href="#welcome">{t.nav.company}</a></li>
-            <li><a href="#welcome">{t.nav.resources}</a></li>
-            <li><a href="#welcome">{t.nav.investors}</a></li>
+            <li><a href={PATHS.STUDIO}>{t.nav.studio}</a></li>
+            <li><a href={PATHS.TECHNOLOGY}>{t.nav.technology}</a></li>
+            <li><a href={PATHS.SOLUTIONS}>{t.nav.solutions}</a></li>
+            <li><a href={PATHS.COMPANY}>{t.nav.company}</a></li>
+            <li><a href={PATHS.RESOURCES}>{t.nav.resources}</a></li>
+            <li><a href={PATHS.INVESTORS}>{t.nav.investors}</a></li>
           </ul>
         </div>
 
@@ -50,12 +51,12 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-heading">{t.footer.services}</h3>
           <ul className="footer-links">
-            <li><a href="#welcome">{t.footer.consulting}</a></li>
-            <li><a href="#welcome">{t.footer.development}</a></li>
-            <li><a href="#welcome">{t.footer.design}</a></li>
-            <li><a href="#welcome">{t.footer.support}</a></li>
-            <li><a href="#welcome">{t.footer.training}</a></li>
-            <li><a href="#welcome">{t.footer.integration}</a></li>
+            <li><a href={PATHS.CONSULTING}>{t.footer.consulting}</a></li>
+            <li><a href={PATHS.DEVELOPMENT}>{t.footer.development}</a></li>
+            <li><a href={PATHS.DESIGN}>{t.footer.design}</a></li>
+            <li><a href={PATHS.SUPPORT}>{t.footer.support}</a></li>
+            <li><a href={PATHS.TRAINING}>{t.footer.training}</a></li>
+            <li><a href={PATHS.INTEGRATION}>{t.footer.integration}</a></li>
           </ul>
         </div>
 
@@ -93,9 +94,9 @@ const Footer = () => {
             © {new Date().getFullYear()} {t.footer.copyright}
           </div>
           <div className="footer-legal">
-            <a href="#privacy-policy">{t.footer.privacyPolicy}</a>
-            <a href="#terms-of-service">{t.footer.termsOfService}</a>
-            <a href="#welcome">Sitemap</a>
+            <a href={PATHS.PRIVACY_POLICY}>{t.footer.privacyPolicy}</a>
+            <a href={PATHS.TERMS_OF_SERVICE}>{t.footer.termsOfService}</a>
+            <a href={PATHS.HOME}>Sitemap</a>
           </div>
         </div>
       </div>

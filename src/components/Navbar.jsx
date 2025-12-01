@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
 import { languages } from "../translations/translations";
+import PATHS from "../routes/paths";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [showLangMenu, setShowLangMenu] = useState(false);
   const [showGetStarted, setShowGetStarted] = useState(false);
@@ -58,7 +61,7 @@ const Navbar = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <button
-              onClick={() => scrollToSection("welcome")}
+              onClick={() => navigate(PATHS.HOME)}
               className={`text-2xl font-bold transition-all hover:scale-110 ${
                 isScrolled 
                   ? theme === 'dark' ? "text-white" : "text-gray-900"
@@ -74,7 +77,7 @@ const Navbar = () => {
           {/* Navigation Items */}
           <div className="hidden md:flex items-center space-x-8">
             <button
-              onClick={() => scrollToSection("welcome")}
+              onClick={() => navigate(PATHS.STUDIO)}
               className={`font-medium transition-all hover:scale-105 ${
                 isScrolled 
                   ? theme === 'dark' ? "text-white hover:text-blue-400" : "text-gray-900 hover:text-blue-600"
@@ -84,7 +87,7 @@ const Navbar = () => {
               {t.nav.studio}
             </button>
             <button
-              onClick={() => scrollToSection("welcome")}
+              onClick={() => navigate(PATHS.TECHNOLOGY)}
               className={`font-medium transition-all hover:scale-105 ${
                 isScrolled 
                   ? theme === 'dark' ? "text-white hover:text-blue-400" : "text-gray-900 hover:text-blue-600"
@@ -94,7 +97,7 @@ const Navbar = () => {
               {t.nav.technology}
             </button>
             <button
-              onClick={() => scrollToSection("welcome")}
+              onClick={() => navigate(PATHS.SOLUTIONS)}
               className={`font-medium transition-all hover:scale-105 ${
                 isScrolled 
                   ? theme === 'dark' ? "text-white hover:text-blue-400" : "text-gray-900 hover:text-blue-600"
@@ -104,7 +107,7 @@ const Navbar = () => {
               {t.nav.solutions}
             </button>
             <button
-              onClick={() => scrollToSection("welcome")}
+              onClick={() => navigate(PATHS.COMPANY)}
               className={`font-medium transition-all hover:scale-105 ${
                 isScrolled 
                   ? theme === 'dark' ? "text-white hover:text-blue-400" : "text-gray-900 hover:text-blue-600"
@@ -114,7 +117,7 @@ const Navbar = () => {
               {t.nav.company}
             </button>
             <button
-              onClick={() => scrollToSection("welcome")}
+              onClick={() => navigate(PATHS.RESOURCES)}
               className={`font-medium transition-all hover:scale-105 ${
                 isScrolled 
                   ? theme === 'dark' ? "text-white hover:text-blue-400" : "text-gray-900 hover:text-blue-600"
@@ -124,7 +127,7 @@ const Navbar = () => {
               {t.nav.resources}
             </button>
             <button
-              onClick={() => scrollToSection("welcome")}
+              onClick={() => navigate(PATHS.INVESTORS)}
               className={`font-medium transition-all hover:scale-105 ${
                 isScrolled 
                   ? theme === 'dark' ? "text-white hover:text-blue-400" : "text-gray-900 hover:text-blue-600"
@@ -306,17 +309,17 @@ const Navbar = () => {
               {/* Navigation Links */}
               <div className="space-y-2">
                 {[
-                  { label: t.nav.studio, id: 'welcome' },
-                  { label: t.nav.technology, id: 'welcome' },
-                  { label: t.nav.solutions, id: 'welcome' },
-                  { label: t.nav.company, id: 'welcome' },
-                  { label: t.nav.resources, id: 'welcome' },
-                  { label: t.nav.investors, id: 'welcome' }
+                  { label: t.nav.studio, path: PATHS.STUDIO },
+                  { label: t.nav.technology, path: PATHS.TECHNOLOGY },
+                  { label: t.nav.solutions, path: PATHS.SOLUTIONS },
+                  { label: t.nav.company, path: PATHS.COMPANY },
+                  { label: t.nav.resources, path: PATHS.RESOURCES },
+                  { label: t.nav.investors, path: PATHS.INVESTORS }
                 ].map((item, idx) => (
                   <button
                     key={idx}
                     onClick={() => {
-                      scrollToSection(item.id);
+                      navigate(item.path);
                       setMobileMenuOpen(false);
                     }}
                     className={`w-full text-left px-4 py-3 rounded-lg font-medium transition-all ${

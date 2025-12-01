@@ -1,4 +1,5 @@
 import { useTheme } from "../context/ThemeContext";
+import PATHS from "../routes/paths";
 
 const PrivacyPolicy = () => {
   const { theme } = useTheme();
@@ -188,10 +189,10 @@ const PrivacyPolicy = () => {
         </div>
 
         {/* Back Button */}
-        <div className="mt-8 text-center">
+        <div className="mt-8 text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <a
-            href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition-all"
+            href={PATHS.HOME}
+            className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-all shadow-lg hover:shadow-xl"
           >
             ← Back to Home
           </a>
