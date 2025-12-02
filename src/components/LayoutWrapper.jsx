@@ -5,7 +5,7 @@ import PageTransition from "./PageTransition";
 const LayoutWrapper = ({ children }) => {
   return (
     <>
-      <CustomCursor enabled={true} />
+      <CustomCursor enabled={false} />
       <PageTransition>
         {children}
       </PageTransition>
