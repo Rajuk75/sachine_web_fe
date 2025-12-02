@@ -7,44 +7,48 @@ const StatsSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section className={`py-20 relative overflow-hidden ${
-      theme === 'dark' 
-        ? 'bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white' 
-        : 'bg-gradient-to-b from-gray-50 via-white to-gray-50 text-gray-900'
-    }`}>
-      {/* Background Decoration */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full blur-3xl opacity-10 ${
-          theme === 'dark' ? 'bg-blue-500' : 'bg-blue-300'
-        }`}></div>
-      </div>
-      
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div className="text-5xl font-bold text-blue-500 mb-2">1000+</div>
-            <div className={theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}>
-              {t.stats.clients}
+    <section className="relative py-8">
+      <div className="max-w-[85rem] mx-auto">
+        <div className={`rounded-[calc(3rem-2px)] p-12 relative overflow-hidden ${
+          theme === 'dark' 
+            ? 'bg-gray-900/40 backdrop-blur-xl border border-white/10' 
+            : 'bg-white/30 backdrop-blur-xl shadow-lg border border-white/40'
+        }`}>
+        {/* Background Decoration */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] rounded-full blur-3xl opacity-10 ${
+            theme === 'dark' ? 'bg-blue-500' : 'bg-blue-300'
+          }`}></div>
+        </div>
+        
+        <div className="relative z-10">
+          <div className="grid md:grid-cols-4 gap-12 text-center">
+            <div className="group">
+              <div className="text-5xl font-bold bg-gradient-to-br from-blue-500 to-blue-600 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">350+</div>
+              <div className={`font-semibold text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                {t.stats.clients}
+              </div>
+            </div>
+            <div className="group">
+              <div className="text-5xl font-bold bg-gradient-to-br from-purple-500 to-purple-600 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">1500+</div>
+              <div className={`font-semibold text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                {t.stats.projects}
+              </div>
+            </div>
+            <div className="group">
+              <div className="text-5xl font-bold bg-gradient-to-br from-pink-500 to-pink-600 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">-25.8%</div>
+              <div className={`font-semibold text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                {t.stats.team}
+              </div>
+            </div>
+            <div className="group">
+              <div className="text-5xl font-bold bg-gradient-to-br from-orange-500 to-orange-600 bg-clip-text text-transparent mb-3 group-hover:scale-110 transition-transform duration-300">#1</div>
+              <div className={`font-semibold text-lg ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
+                {t.stats.experience}
+              </div>
             </div>
           </div>
-          <div>
-            <div className="text-5xl font-bold text-blue-500 mb-2">1200+</div>
-            <div className={theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}>
-              {t.stats.projects}
-            </div>
-          </div>
-          <div>
-            <div className="text-5xl font-bold text-blue-500 mb-2">15+</div>
-            <div className={theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}>
-              {t.stats.team}
-            </div>
-          </div>
-          <div>
-            <div className="text-5xl font-bold text-blue-500 mb-2">20+</div>
-            <div className={theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}>
-              {t.stats.experience}
-            </div>
-          </div>
+        </div>
         </div>
       </div>
     </section>

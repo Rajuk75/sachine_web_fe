@@ -26,22 +26,22 @@ export const en = {
 
   // Welcome Section
   welcome: {
-    title: "Welcome to Our Company",
-    subtitle: "We're dedicated to delivering exceptional solutions that drive growth and innovation.",
-    feature1Title: "Fast & Reliable",
-    feature1Desc: "Lightning-fast performance with 99.9% uptime guarantee for your peace of mind.",
-    feature2Title: "Secure",
-    feature2Desc: "Enterprise-grade security to protect your data and ensure compliance.",
-    feature3Title: "Innovative",
-    feature3Desc: "Cutting-edge technology and continuous innovation to stay ahead.",
+    title: "All you need in an ideal DSP",
+    subtitle: "Your go-to programmatic media buyer for high-value user targeting and acquisition.",
+    feature1Title: "AI Targeting",
+    feature1Desc: "AI based high-value user targeting and acquisition with global scale.",
+    feature2Title: "Transparency",
+    feature2Desc: "100% Transparency with dashboard access and real-time tracking.",
+    feature3Title: "Fraud Prevention",
+    feature3Desc: "Fraud Prevention & Creative Optimization for best performance.",
   },
 
   // Stats Section
   stats: {
-    clients: "Happy Clients",
-    projects: "Projects Completed",
-    team: "Team Members",
-    experience: "Years Experience",
+    clients: "Amazon: 350+ events daily",
+    projects: "Gojek: 1500+ rides daily",
+    team: "CPDAU Reduced by 25.8%",
+    experience: "Top Acquisition Channel",
   },
 
   // CTA Section

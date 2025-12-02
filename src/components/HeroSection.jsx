@@ -1,98 +1,134 @@
 import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
-import WaveBackground from "./WaveBackground";
+
+import WaveSeparator from './WaveSeparator';
 
 const HeroSection = () => {
   const { theme } = useTheme();
   const { t } = useLanguage();
 
   return (
-    <section className={`min-h-screen flex items-center justify-center pt-20 pb-10 relative overflow-hidden ${theme === 'dark' 
-      ? 'bg-gradient-to-b from-gray-900 via-slate-900 to-gray-900' 
-      : 'bg-gradient-to-b from-white via-blue-50 to-white'
+    <section className={`min-h-screen flex flex-col items-center justify-center pt-28 pb-0 overflow-hidden relative ${
+      theme === 'dark' ? 'bg-[#0B0F19]' : 'bg-white'
+    }`}>
+      
+      {/* Main Container with "Elevated" Glassmorphism Style */}
+      <div className={`w-full max-w-7xl mx-auto rounded-[3rem] p-8 md:p-12 lg:p-16 relative overflow-hidden z-20 ${
+        theme === 'dark' 
+          ? 'bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 border border-white/5' 
+          : 'bg-gradient-to-br from-blue-50 via-white to-purple-50 border border-white/60 shadow-2xl shadow-blue-100/50'
       }`}>
-      {/* Wave Background */}
-      <WaveBackground />
+        
+        {/* Abstract Background Graphics */}
+        <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-[120px] pointer-events-none -translate-y-1/2 translate-x-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-orange-400/10 to-pink-400/10 rounded-full blur-[100px] pointer-events-none translate-y-1/3 -translate-x-1/4"></div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        {/* Badge */}
-        <div className="flex justify-center mb-6 animate-fade-in">
-          <div className={`inline-flex items-center gap-2 px-5 py-2.5 rounded-full backdrop-blur-md ${theme === 'dark' 
-            ? 'bg-blue-500/10 border border-blue-400/30' 
-            : 'bg-blue-100/80 border border-blue-300/50'}`}>
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
-            </span>
-            <span className={`text-sm font-semibold ${theme === 'dark' ? 'text-blue-300' : 'text-blue-700'}`}>
-              AI-Powered Platform
-            </span>
-          </div>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center relative z-10">
+          
+          {/* Left Column: Text Content */}
+          <div className="text-left space-y-8 relative">
+            
+            <h1 className={`text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight ${
+              theme === 'dark' ? 'text-white' : 'text-gray-900'
+            }`}>
+              {t.hero.titlePart1}
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 animate-gradient-x">
+                {t.hero.titlePart2}
+              </span>
+            </h1>
 
-        {/* Main Heading */}
-        <h1 className={`text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight animate-fade-in ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-          <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
-            {t.hero.titlePart1}
-          </span>
-          <br />
-          <span className={theme === 'dark' ? 'text-white' : 'text-gray-900'}>
-            {t.hero.titlePart2}
-          </span>
-        </h1>
+            <p className={`text-lg md:text-xl leading-relaxed max-w-xl ${
+              theme === 'dark' ? 'text-gray-300' : 'text-gray-600'
+            }`}>
+              {t.hero.subtitle}{' '}
+              <span className="font-semibold text-blue-500">
+                {t.hero.predictiveAlgorithms}
+              </span>
+              {' '}{t.hero.and}{' '}
+              <span className="font-semibold text-purple-500">
+                {t.hero.machineLearning}
+              </span>
+            </p>
 
-        {/* Subtitle */}
-        <p className={`text-lg md:text-xl mb-12 max-w-3xl mx-auto animate-fade-in ${theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}`}>
-          {t.hero.predictiveAlgorithms} {t.hero.and} {t.hero.machineLearning}
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-wrap justify-center gap-4 mb-16 animate-fade-in">
-          <a
-            href="https://adshamper.com/user/login/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative px-10 py-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl text-base font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center gap-2 overflow-hidden"
-          >
-            <span className="absolute inset-0 bg-gradient-to-r from-blue-700 via-purple-700 to-pink-700 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-            <span className="relative">🔐</span>
-            <span className="relative">{t.nav.login}</span>
-          </a>
-          <a
-            href="https://adshamper.com/user/register/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`px-10 py-4 rounded-xl text-base font-semibold hover:scale-105 transition-all duration-300 inline-flex items-center gap-2 backdrop-blur-md ${theme === 'dark'
-              ? 'bg-white/10 text-white hover:bg-white/20 border border-white/20'
-              : 'bg-white/80 text-gray-900 hover:bg-white border border-gray-200 shadow-lg'
-            }`}
-          >
-            <span>✨</span>
-            <span>{t.nav.signUp}</span>
-          </a>
-        </div>
-
-        {/* Feature Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto animate-fade-in">
-          {[
-            { icon: '🎯', title: 'Accurate', desc: 'Precision targeting with AI' },
-            { icon: '⚡', title: 'Fast', desc: 'Real-time processing' },
-            { icon: '🔒', title: 'Secure', desc: 'Enterprise-grade security' }
-          ].map((feature, idx) => (
-            <div key={idx} className={`p-6 rounded-2xl backdrop-blur-md transition-all duration-300 hover:scale-105 hover:shadow-2xl ${theme === 'dark'
-                ? 'bg-white/5 border border-white/10 hover:bg-white/10'
-                : 'bg-white/60 border border-gray-200 hover:shadow-blue-200/50'
-              }`}>
-              <div className="text-4xl mb-3">{feature.icon}</div>
-              <h3 className={`text-xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-                {feature.title}
-              </h3>
-              <p className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-                {feature.desc}
-              </p>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <a
+                href="https://adshamper.com/user/register/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center px-8 py-3 text-lg font-bold text-white transition-all duration-300 bg-blue-600 rounded-full hover:bg-blue-700 hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-1 overflow-hidden"
+              >
+                <span className="relative z-10 flex items-center gap-2">
+                  {t.nav.signUp} Now <span className="transition-transform group-hover:translate-x-1">→</span>
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </a>
+              
+              <a
+                href="https://adshamper.com/user/login/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`inline-flex items-center justify-center px-8 py-3 text-lg font-bold transition-all duration-300 rounded-full border hover:-translate-y-1 ${
+                  theme === 'dark' 
+                    ? 'border-white/20 text-white hover:bg-white/10' 
+                    : 'border-gray-200 text-gray-700 hover:bg-white hover:shadow-md hover:border-gray-300'
+                }`}
+              >
+                {t.nav.login}
+              </a>
             </div>
-          ))}
+          </div>
+
+          {/* Right Column: Image with "Elevated" Graphics Feel */}
+          <div className="relative perspective-1000">
+             {/* Main Image Card */}
+             <div className="relative z-10 rounded-[2.5rem] overflow-hidden shadow-2xl shadow-blue-500/20 transform transition-transform hover:scale-[1.02] duration-700 group">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10 opacity-60"></div>
+                <img 
+                  src="/hero_tech.png" 
+                  alt="AI Tech Professional" 
+                  className="w-full h-auto object-cover scale-105 group-hover:scale-110 transition-transform duration-1000"
+                />
+                
+                {/* Floating Glass Card Overlay 1 */}
+                <div className="absolute bottom-8 left-8 right-8 p-6 rounded-2xl backdrop-blur-xl bg-white/10 border border-white/20 z-20 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-500">
+                  <div className="flex items-center gap-4">
+                    <div className={`h-12 w-12 rounded-full flex items-center justify-center shadow-lg overflow-hidden p-1 ${
+                      theme === 'dark' ? 'bg-black border border-gray-700' : 'bg-white'
+                    }`}>
+                      <img 
+                        src="/adshamper_logo-removebg-preview.png" 
+                        alt="AdsHamper" 
+                        className="w-full h-full object-contain" 
+                      />
+                    </div>
+                    <div>
+                      <div className="text-white font-semibold text-lg">AdsHamper</div>
+                      <div className="text-blue-200 text-sm">Proof in Performance</div>
+                    </div>
+                    <div className="ml-auto">
+                       <div className="flex gap-1">
+                         <div className="w-1 h-6 bg-green-400 rounded-full animate-pulse"></div>
+                         <div className="w-1 h-4 bg-green-400 rounded-full animate-pulse delay-75"></div>
+                         <div className="w-1 h-8 bg-green-400 rounded-full animate-pulse delay-150"></div>
+                         <div className="w-1 h-5 bg-green-400 rounded-full animate-pulse delay-100"></div>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+             </div>
+             
+             {/* Floating Decorative Elements */}
+             <div className="absolute -top-6 -right-6 w-24 h-24 rounded-2xl bg-gradient-to-br from-orange-400 to-pink-500 blur-2xl opacity-40 animate-pulse"></div>
+             <div className="absolute -bottom-8 -left-8 w-32 h-32 rounded-full bg-blue-500/30 blur-3xl animate-pulse delay-700"></div>
+          </div>
+
         </div>
+      </div>
+
+      {/* Wave Separator */}
+      <div className="w-full relative z-10">
+        <WaveSeparator />
       </div>
     </section>
   );

@@ -48,6 +48,7 @@ const Navbar = () => {
           ? theme === 'dark' ? "bg-gray-900/95 backdrop-blur-lg shadow-lg shadow-gray-900/50" : "bg-white/95 backdrop-blur-lg shadow-lg"
           : "bg-transparent"
       }`}
+      style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 50 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -61,9 +62,11 @@ const Navbar = () => {
                   : theme === 'dark' ? "text-white" : "text-blue-600"
               }`}
             >
-              <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
-                AdsHamper
-              </span>
+              <img 
+                src="/adshamper_logo-removebg-preview.png" 
+                alt="AdsHamper" 
+                className="h-20 w-auto object-contain"
+              />
             </button>
           </div>
 

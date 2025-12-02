@@ -5,15 +5,17 @@ import LayoutWrapper from "../components/LayoutWrapper";
 
 const MainLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col">
-      <LayoutWrapper>
-        <Navbar />
-        <main className="flex-grow">
-          <Outlet />
-        </main>
-        <Footer />
-      </LayoutWrapper>
-    </div>
+    <>
+      <Navbar />
+      <div className="min-h-screen flex flex-col">
+        <LayoutWrapper>
+          <main className="flex-grow">
+            <Outlet />
+          </main>
+          <Footer />
+        </LayoutWrapper>
+      </div>
+    </>
   );
 };
 

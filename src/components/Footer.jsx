@@ -13,8 +13,7 @@ const Footer = () => {
         {/* Brand Section */}
         <div className="footer-section">
           <div className="footer-brand">
-            <span className="footer-badge">A</span>
-            <span className="footer-brand-name">AdsHamper</span>
+            {/* <span className="footer-brand-name">AdsHamper</span> */}
           </div>
           <p className="footer-description">
             Adshamper Pvt. Ltd. is a dynamic marketing and advertising company based in Kolkata, India, dedicated to transforming the digital performance marketing space with innovation, technology, and a strong focus on measurable results.
@@ -23,15 +22,7 @@ const Footer = () => {
             <strong>🚀 Our Vision:</strong>
             <p>To become India's most trusted performance marketing and fintech advertising network, known for delivering Proof in Performance and Power in Results.</p>
           </div>
-          <div className="footer-social">
-            <span>{t.footer.followUs}</span>
-            <div className="social-links">
-              <a href="#" className="social-link">Facebook</a>
-              <a href="#" className="social-link">Twitter</a>
-              <a href="#" className="social-link">Instagram</a>
-              <a href="#" className="social-link">YouTube</a>
-            </div>
-          </div>
+
         </div>
 
         {/* Quick Links */}
@@ -408,7 +399,7 @@ const Footer = () => {
         /* Mobile Responsive */
         @media (max-width: 768px) {
           .footer-inner {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             padding: 30px 20px;
           }

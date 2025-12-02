@@ -73,77 +73,88 @@ const ClientsSection = () => {
   ];
 
   return (
-    <section className="relative">
-      {/* Section Header */}
-      <div className="text-center mb-12">
-        <div className={`inline-block px-4 py-2 rounded-full mb-4 ${
-          theme === 'dark' ? 'bg-blue-500/10 border border-blue-400/30' : 'bg-blue-100/80 border border-blue-300/50'
+    <section className="relative py-4 overflow-hidden">
+      <div className="max-w-[85rem] mx-auto">
+        <div className={`w-full relative rounded-[calc(3rem-2px)] ${
+          theme === 'dark' 
+            ? 'bg-gray-900/40 backdrop-blur-xl border border-white/10' 
+            : 'bg-white/30 backdrop-blur-xl shadow-lg border border-white/40'
         }`}>
-          <span className={`text-sm font-semibold ${theme === 'dark' ? 'text-blue-300' : 'text-blue-700'}`}>
-            ⭐ Our Partners
-          </span>
-        </div>
-        <h2 className={`text-3xl md:text-4xl font-bold ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
-          Trusted by Leading Brands
-        </h2>
-        <p className={`mt-3 text-base ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-          Join thousands of companies that trust our platform
-        </p>
-      </div>
-      
-      {/* Clients Grid */}
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-        {clients.map((client, idx) => (
-          <div 
-            key={idx}
-            className={`group relative backdrop-blur-md rounded-2xl px-6 py-5 transition-all duration-300 hover:scale-110 hover:shadow-2xl cursor-pointer ${
-              theme === 'dark' 
-                ? 'bg-gradient-to-br from-gray-800/60 to-gray-800/40 border border-gray-700/50 hover:border-blue-500/50 hover:shadow-blue-500/20' 
-                : 'bg-white/90 border border-gray-200 hover:border-blue-400 hover:shadow-blue-300/40'
-            }`}
-          >
-            {/* Glow effect on hover */}
-            <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
-              theme === 'dark' ? 'bg-gradient-to-br from-blue-500/10 to-purple-500/10' : 'bg-gradient-to-br from-blue-50 to-purple-50'
-            }`}></div>
             
-            <div className="relative flex items-center justify-center h-full">
-              {client.component}
+            {/* Section Header */}
+            <div className="text-center mb-16 relative z-10 pt-12">
+              <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-md border mb-6 ${
+                theme === 'dark' ? 'bg-white/10 border-white/10 text-blue-300' : 'bg-white/60 border-white/60 text-blue-600 shadow-sm'
+              }`}>
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                Trusted Partners
+              </div>
+              
+              <h2 className={`text-4xl md:text-5xl font-bold mb-6 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                Trusted by Leading Brands
+              </h2>
+              <p className={`text-lg max-w-2xl mx-auto ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                Join thousands of forward-thinking companies that trust our platform to drive their growth.
+              </p>
             </div>
-          </div>
-        ))}
-      </div>
+            
+            {/* Clients Grid */}
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center relative z-10 px-8 md:px-12">
+              {clients.map((client, idx) => (
+                <div 
+                  key={idx}
+                  className={`group relative h-32 flex items-center justify-center rounded-2xl transition-all duration-500 hover:-translate-y-1 ${
+                    theme === 'dark' 
+                      ? 'bg-white/5 border border-white/5 hover:bg-white/10 hover:border-white/20' 
+                      : 'bg-white/50 border border-white/60 hover:bg-white/80 hover:shadow-lg hover:shadow-blue-500/10'
+                  }`}
+                >
+                  <div className="transform transition-transform duration-500 group-hover:scale-110">
+                    {client.component}
+                  </div>
+                </div>
+              ))}
+            </div>
 
-      {/* Bottom Stats */}
-      <div className="mt-16 text-center">
-        <div className="inline-flex items-center gap-8 flex-wrap justify-center">
-          <div className="text-center">
-            <div className={`text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent`}>
-              500+
+            {/* Bottom Stats */}
+            <div className="mt-20 relative z-10 px-8 md:px-12 pb-12">
+              <div className={`grid grid-cols-1 md:grid-cols-3 gap-8 rounded-3xl p-8 ${
+                 theme === 'dark' ? 'bg-white/5' : 'bg-white/50'
+              }`}>
+                <div className="text-center">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent mb-2">
+                    500+
+                  </div>
+                  <div className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                    Global Clients
+                  </div>
+                </div>
+                <div className="text-center md:border-l md:border-r border-gray-200/20">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-2">
+                    98%
+                  </div>
+                  <div className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                    Satisfaction Rate
+                  </div>
+                </div>
+                <div className="text-center">
+                  <div className="text-4xl font-bold bg-gradient-to-r from-pink-500 to-orange-500 bg-clip-text text-transparent mb-2">
+                    24/7
+                  </div>
+                  <div className={`text-sm font-medium ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
+                    Support Available
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-              Global Clients
-            </div>
+
+            {/* Decorative Gradients */}
+            <div className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-blue-500/20 blur-3xl"></div>
+            <div className="absolute bottom-0 left-0 -ml-20 -mb-20 w-96 h-96 rounded-full bg-purple-500/20 blur-3xl"></div>
           </div>
-          <div className={`w-px h-12 ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-300'}`}></div>
-          <div className="text-center">
-            <div className={`text-3xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent`}>
-              98%
-            </div>
-            <div className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-              Satisfaction Rate
-            </div>
-          </div>
-          <div className={`w-px h-12 ${theme === 'dark' ? 'bg-gray-700' : 'bg-gray-300'}`}></div>
-          <div className="text-center">
-            <div className={`text-3xl font-bold bg-gradient-to-r from-pink-600 to-blue-600 bg-clip-text text-transparent`}>
-              24/7
-            </div>
-            <div className={`text-sm ${theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>
-              Support Available
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
