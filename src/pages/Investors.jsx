@@ -164,8 +164,8 @@ const Investors = () => {
           <p className="text-gray-300 mb-8 text-lg">
             For inquiries regarding financial information or investment opportunities.
           </p>
-          <a href="mailto:investors@adshamper.com" className="inline-block bg-white text-gray-900 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
-            investors@adshamper.com
+          <a href="mailto:support@adshamper.com" className="inline-block bg-white text-gray-900 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
+            support@adshamper.com
           </a>
         </div>
       </div>

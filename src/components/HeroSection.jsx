@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from "../context/LanguageContext";
-import { FaLaptop, FaCode, FaServer, FaMobile, FaCloud, FaRocket, FaDatabase } from 'react-icons/fa';
+import { FaBullhorn, FaChartLine, FaSearchDollar, FaUserCog, FaMailBulk, FaRocket, FaCogs } from 'react-icons/fa';
 
 const HeroSection = () => {
   const { t } = useLanguage();
@@ -47,7 +47,7 @@ const HeroSection = () => {
           <div className="space-y-8 relative z-20 -mt-20 text-center lg:text-left">
              <div className="flex w-fit items-center gap-2 px-3 py-1 bg-white/50 backdrop-blur-sm border border-blue-100 rounded-full mx-auto">
                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-                <span className="text-primary font-bold tracking-wider uppercase text-xs">Future Ads Agency</span>
+                <span className="text-primary font-bold tracking-wider uppercase text-xs">Fastest Growing Ad Agency</span>
              </div>
              
              <h1 className="text-5xl md:text-7xl font-bold text-dark leading-tight">
@@ -83,26 +83,26 @@ const HeroSection = () => {
             {/* Inner Orbit */}
             <div className="absolute w-[280px] h-[280px] border border-blue-200/60 rounded-full animate-orbit-slow">
                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full p-1 bg-white border border-blue-100 shadow-md animate-orbit-reverse-slow">
-                 <IconWrapper color="bg-blue-100 text-blue-600"><FaCode className="w-6 h-6" /></IconWrapper>
+                 <IconWrapper color="bg-blue-100 text-blue-600"><FaBullhorn className="w-6 h-6" /></IconWrapper>
                </div>
                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-10 h-10 rounded-full p-1 bg-white border border-blue-100 shadow-md animate-orbit-reverse-slow">
-                 <IconWrapper color="bg-sky-100 text-sky-600"><FaMobile className="w-5 h-5" /></IconWrapper>
+                 <IconWrapper color="bg-sky-100 text-sky-600"><FaChartLine className="w-5 h-5" /></IconWrapper>
                </div>
             </div>
 
             {/* Middle Orbit */}
             <div className="absolute w-[450px] h-[450px] border border-blue-200/50 rounded-full animate-orbit">
                <div className="absolute top-1/4 left-0 -translate-x-1/2 w-14 h-14 rounded-full p-1 bg-white border border-blue-100 shadow-lg animate-orbit-reverse">
-                 <IconWrapper color="bg-indigo-100 text-indigo-600"><FaCloud className="w-7 h-7" /></IconWrapper>
+                 <IconWrapper color="bg-indigo-100 text-indigo-600"><FaSearchDollar className="w-7 h-7" /></IconWrapper>
                  <div className="absolute -top-1 -right-1 w-5 h-5 bg-primary rounded-full flex items-center justify-center border border-white text-white">
                     <span className="text-[10px] font-bold">1</span>
                  </div>
                </div>
                <div className="absolute bottom-1/4 right-0 translate-x-1/2 w-12 h-12 rounded-full p-1 bg-white border border-blue-100 shadow-lg animate-orbit-reverse">
-                 <IconWrapper color="bg-cyan-100 text-cyan-600"><FaDatabase className="w-6 h-6" /></IconWrapper>
+                 <IconWrapper color="bg-cyan-100 text-cyan-600"><FaUserCog className="w-6 h-6" /></IconWrapper>
                </div>
                <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-16 h-16 rounded-full p-1 bg-white border border-blue-100 shadow-lg animate-orbit-reverse">
-                 <IconWrapper color="bg-blue-50 text-primary"><FaServer className="w-8 h-8" /></IconWrapper>
+                 <IconWrapper color="bg-blue-50 text-primary"><FaMailBulk className="w-8 h-8" /></IconWrapper>
                </div>
             </div>
 
@@ -114,7 +114,7 @@ const HeroSection = () => {
                  </div>
                </div>
                <div className="absolute top-0 left-1/4 w-10 h-10 rounded-full p-1 bg-white border border-blue-100 shadow-md animate-orbit-reverse-slower opacity-80">
-                 <IconWrapper color="bg-gray-100 text-gray-600"><FaLaptop className="w-5 h-5" /></IconWrapper>
+                 <IconWrapper color="bg-gray-100 text-gray-600"><FaCogs className="w-5 h-5" /></IconWrapper>
                </div>
             </div>
 
