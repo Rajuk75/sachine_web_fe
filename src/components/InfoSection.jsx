@@ -74,7 +74,7 @@ const InfoSection = () => {
         {/* Big Call-to-Action */}
         <RevealOnScroll>
           <div className="flex justify-center">
-            <a href={EXTERNAL_LINKS.REGISTER} className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-blue-600 text-white text-lg font-bold shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition-all">
+            <a href={EXTERNAL_LINKS.REGISTER} className="inline-flex items-center gap-2 px-6 py-3 md:px-10 md:py-4 rounded-full bg-blue-600 text-white text-base md:text-lg font-bold shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition-all">
               Start your growth journey now <FaArrowRight />
             </a>
           </div>

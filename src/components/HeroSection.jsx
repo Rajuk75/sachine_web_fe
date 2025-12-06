@@ -50,13 +50,13 @@ const HeroSection = () => {
                 <span className="text-primary font-bold tracking-wider uppercase text-xs">Fastest Growing Ad Agency</span>
              </div>
              
-             <h1 className="text-5xl md:text-7xl font-bold text-dark leading-tight">
+             <h1 className="text-5xl md:text-7xl font-bold text-blue-700 leading-tight">
                 Scale your app <br />
-                growth <span className="text-[#facc15]">with high-value users</span>
+                growth <span className="text-cyan-500">with high-value users</span>
              </h1>
              
              <p className="text-gray-600 text-xl md:text-2xl max-w-2xl leading-relaxed mt-6">
-                Level up your mobile app user acquisition, retention and brand performance with <span className="text-rose-600 font-semibold">predictive algorithms and machine learning</span>
+                Level up your mobile app user acquisition, retention and brand performance with <span className="text-cyan-500 font-semibold">predictive algorithms and machine learning</span>
              </p>
              
              <div className="flex flex-wrap items-center gap-6">
