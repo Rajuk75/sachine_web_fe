@@ -38,12 +38,12 @@ const InfoSection = () => {
 
         {/* Service Grid */}
         <div className="relative">
-           {/* Read More Button - Absolute Top Right */}
-           <div className="absolute -top-16 right-0 hidden lg:block">
-              <button className="px-6 py-2 rounded-lg border border-blue-400 text-blue-500 font-medium hover:bg-blue-50 transition-all flex items-center gap-2">
+           {/* Read More Button - Absolute Bottom Right */}
+           {/* <div className="absolute -bottom-16 right-0 hidden lg:block">
+              <Link to={PATHS.COMPANY} className="px-6 py-2 rounded-lg border border-blue-400 text-blue-500 font-medium hover:bg-blue-50 transition-all flex items-center gap-2">
                  Read More <FaArrowRight />
-              </button>
-           </div>
+              </Link>
+           </div> */}
 
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
              {HOME_SERVICES.map((service, index) => (

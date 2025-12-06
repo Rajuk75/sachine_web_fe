@@ -54,7 +54,7 @@ export const en = {
   // Platform Section
   platform: {
     title: "The all-in-one platform to grow your app",
-    subtitle: "Launch more powerful, data-driven custom-built campaigns to achieve global growth with AdsHamper",
+    subtitle: "Launch more powerful, data-driven custom-built campaigns to achieve global growth with Adshamper",
     discover: "Discover",
     discoverText: "a high-value, fraud-free user base for your app",
     discoverDesc: "Uncover the power of intelligent advertising and target the most relevant audience for your brand with optimized creatives on point. Advertising to create real conversions",
@@ -65,7 +65,7 @@ export const en = {
     reengage: "Re-engage",
     reengageText: "users with machine learning optimized creatives",
     reengageDesc: "Create extended look-alike audiences, measure user interest and optimize the lifecycle of assets to re-target previously active and loyal users with our predictive machine learning",
-    statsTitle: "AdsHamper by the count",
+    statsTitle: "Adshamper by the count",
     stat1: "Users across apps",
     stat2: "Countries engaged",
     stat2Sub: "with ads each month",
@@ -85,7 +85,7 @@ export const en = {
     email: "Email",
     officeHours: "Office Hours",
     followUs: "Follow us:",
-    copyright: "AdsHamper. All rights reserved.",
+    copyright: "Adshamper. All rights reserved.",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service",
     sitemap: "Sitemap",

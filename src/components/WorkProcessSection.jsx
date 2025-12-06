@@ -28,7 +28,7 @@ const WorkProcessSection = () => {
 
   const stats = [
     { number: 4000, label: 'Project Completed', suffix: 'k', value: 4, icon: <FaRocket /> },
-    { number: 12, label: 'Years Experiences', suffix: '', value: 5, icon: <FaTrophy /> },
+    { number: 12, label: 'Years Experiences', suffix: '+', value: 5, icon: <FaTrophy /> },
     { number: 17000, label: 'Happy Customers', suffix: 'k', value: 17, icon: <FaRegSmileBeam /> },
     { number: 30, label: 'Team Members', suffix: '', value: 30, icon: <FaUserFriends /> },
   ];

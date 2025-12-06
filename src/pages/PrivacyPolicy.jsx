@@ -38,16 +38,16 @@ const PrivacyPolicy = () => {
             {/* Introduction */}
             <section className="mb-8">
               <h2 className="text-2xl font-bold mb-4 text-gray-900">
-                About AdsHamper
+                About Adshamper
               </h2>
               <p className="mb-4 leading-relaxed text-gray-700">
-                AdsHamper is a global advertising technology platform for media buying and reducing the complexity of the marketing technology ecosystem. AdsHamper helps advertisers create personalized ads for every single customer dynamically at run time. With a unique rule based engine, it allows for a much deeper and meaningful engagement with the customers.
+                Adshamper is a global advertising technology platform for media buying and reducing the complexity of the marketing technology ecosystem. Adshamper helps advertisers create personalized ads for every single customer dynamically at run time. With a unique rule based engine, it allows for a much deeper and meaningful engagement with the customers.
               </p>
               <p className="mb-4 leading-relaxed text-gray-700">
                 We are headquartered in India, with an office in New Delhi. We provide this privacy policy so that we may inform you about how our ad optimization technology gathers and processes information.
               </p>
               <p className="mb-4 leading-relaxed text-gray-700">
-                AdsHamper recognizes and values your privacy and we are committed to protecting the confidentiality of your personal information. If at any time you wish to withdraw your personal information, contact us at <a href="mailto:support@adshamper.com" className="text-blue-600 hover:text-blue-700">support@adshamper.com</a>.
+                Adshamper recognizes and values your privacy and we are committed to protecting the confidentiality of your personal information. If at any time you wish to withdraw your personal information, contact us at <a href="mailto:support@adshamper.com" className="text-blue-600 hover:text-blue-700">support@adshamper.com</a>.
               </p>
             </section>
 
@@ -101,7 +101,7 @@ const PrivacyPolicy = () => {
                 Security & Storage Procedures
               </h2>
               <p className="mb-4 leading-relaxed text-gray-700">
-                At AdsHamper we make protection of your personal information from loss, theft or misuse our top priority. All information we have collected is stored using the same security measures that we use to protect our own proprietary corporate data. Only authorized users are able to access the data we collect and store.
+                At Adshamper we make protection of your personal information from loss, theft or misuse our top priority. All information we have collected is stored using the same security measures that we use to protect our own proprietary corporate data. Only authorized users are able to access the data we collect and store.
               </p>
             </section>
 
@@ -111,7 +111,7 @@ const PrivacyPolicy = () => {
                 GDPR Compliance
               </h2>
               <p className="mb-4 leading-relaxed text-gray-700">
-                At AdsHamper, we take the protection of your personal data seriously. We are committed to complying with the General Data Protection Regulation (GDPR) and other applicable data protection laws.
+                At Adshamper, we take the protection of your personal data seriously. We are committed to complying with the General Data Protection Regulation (GDPR) and other applicable data protection laws.
               </p>
               <h3 className="text-xl font-semibold mb-3 text-gray-900">
                 Data Subject Rights
@@ -146,7 +146,7 @@ const PrivacyPolicy = () => {
                 Disclaimer
               </h2>
               <p className="mb-4 leading-relaxed text-gray-700">
-                THE INFORMATION, DOCUMENTATION, SOFTWARE, PRODUCTS, AND SERVICES CONTAINED ON THE AdsHamper WEBSITE ARE PROVIDED "AS IS" WITHOUT ANY WARRANTY OF ANY KIND. AdsHamper AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES RELATING TO THE INFORMATION, DOCUMENTATION, SOFTWARE, PRODUCTS, AND SERVICES CONTAINED ON THE AdsHamper WEBSITE.
+                THE INFORMATION, DOCUMENTATION, SOFTWARE, PRODUCTS, AND SERVICES CONTAINED ON THE Adshamper WEBSITE ARE PROVIDED "AS IS" WITHOUT ANY WARRANTY OF ANY KIND. Adshamper AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES RELATING TO THE INFORMATION, DOCUMENTATION, SOFTWARE, PRODUCTS, AND SERVICES CONTAINED ON THE Adshamper WEBSITE.
               </p>
             </section>
 
@@ -156,7 +156,7 @@ const PrivacyPolicy = () => {
                 Governing Law
               </h2>
               <p className="mb-4 leading-relaxed text-gray-700">
-                This is an Indian website and is subject to the laws of India. AdsHamper may have to disclose personally identifiable information without your permission when required by law.
+                This is an Indian website and is subject to the laws of India. Adshamper may have to disclose personally identifiable information without your permission when required by law.
               </p>
             </section>
 

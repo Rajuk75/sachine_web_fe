@@ -22,7 +22,7 @@ const Navbar = () => {
   const currentLang = languages.find(lang => lang.code === language);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300 py-2`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300 py-1`}>
       <div className="w-full px-4 sm:px-6 lg:px-12">
         <div className="flex items-center justify-between">
           
@@ -42,11 +42,11 @@ const Navbar = () => {
               { label: "Services", path: PATHS.SOLUTIONS },
               { label: "Investor Relations", path: PATHS.INVESTORS },
               { label: "About", path: PATHS.COMPANY },
-              { label: "Contact", path: PATHS.COMPANY },
+              { label: "Contact", action: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) },
             ].map((item, idx) => (
               <button
                 key={idx}
-                onClick={() => navigate(item.path)}
+                onClick={() => item.action ? item.action() : navigate(item.path)}
                 className="text-sm font-medium text-gray-700 hover:text-pink-600 transition-colors flex items-center gap-1 relative group"
               >
                 {item.label}
@@ -91,12 +91,16 @@ const Navbar = () => {
                 { label: "Services", path: PATHS.SOLUTIONS },
                 { label: "Investor Relations", path: PATHS.INVESTORS },
                 { label: "About", path: PATHS.COMPANY },
-                { label: "Contact", path: PATHS.COMPANY }
+                { label: "Contact", action: () => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }) }
               ].map((item, idx) => (
                 <button
                   key={idx}
                   onClick={() => {
-                    navigate(item.path);
+                    if (item.action) {
+                      item.action();
+                    } else {
+                      navigate(item.path);
+                    }
                     setMobileMenuOpen(false);
                   }}
                   className="text-left px-4 py-2 text-gray-700 hover:bg-gray-50 rounded-lg font-medium"
