@@ -20,7 +20,7 @@ const PageTemplate = ({
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+    <div className="min-h-screen pt-32 pb-16 relative bg-gradient-to-b from-blue-50 to-white">
       {/* Clean Background - No Blobs */}
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -33,7 +33,7 @@ const PageTemplate = ({
               </span>
             </div>
           )}
-          <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 bg-gradient-to-r from-${gradientFrom}-600 via-${gradientTo}-600 to-pink-600 bg-clip-text text-transparent animate-slide-up`}>
+          <h1 className={`text-4xl md:text-5xl lg:text-6xl font-bold mb-4 pb-2 bg-gradient-to-r from-${gradientFrom}-600 via-${gradientTo}-600 to-pink-600 bg-clip-text text-transparent animate-slide-up`}>
             {title}
           </h1>
           {subtitle && (

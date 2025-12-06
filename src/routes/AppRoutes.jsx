@@ -4,7 +4,6 @@ import MainLayout from "../layouts/MainLayout";
 import PageLoader from "../components/PageLoader";
 import PATHS from "./paths";
 const Home = lazy(() => import("../pages/Home"));
-const Studio = lazy(() => import("../pages/Studio"));
 const Technology = lazy(() => import("../pages/Technology"));
 const Solutions = lazy(() => import("../pages/Solutions"));
 const Company = lazy(() => import("../pages/Company"));
@@ -19,6 +18,7 @@ const Integration = lazy(() => import("../pages/services/Integration"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("../pages/TermsOfService"));
 const Disclaimer = lazy(() => import("../pages/Disclaimer"));
+const ProgrammaticAdvertising = lazy(() => import("../pages/ProgrammaticAdvertising"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const AppRoutes = () => {
@@ -27,7 +27,6 @@ const AppRoutes = () => {
       <Routes>
         <Route path={PATHS.HOME} element={<Home />} />
         <Route element={<MainLayout />}>
-          <Route path={PATHS.STUDIO} element={<Studio />} />
           <Route path={PATHS.TECHNOLOGY} element={<Technology />} />
           <Route path={PATHS.SOLUTIONS} element={<Solutions />} />
           <Route path={PATHS.COMPANY} element={<Company />} />
@@ -42,6 +41,7 @@ const AppRoutes = () => {
           <Route path={PATHS.PRIVACY_POLICY} element={<PrivacyPolicy />} />
           <Route path={PATHS.TERMS_OF_SERVICE} element={<TermsOfService />} />
           <Route path={PATHS.DISCLAIMER} element={<Disclaimer />} />
+          <Route path={PATHS.PROGRAMMATIC_ADS} element={<ProgrammaticAdvertising />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

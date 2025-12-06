@@ -30,7 +30,7 @@ const PageLoader = () => {
         <div className="mb-12 animate-fade-in">
           <div className="relative inline-block">
             <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-gradient">
-              AdsHamper
+              Adshamper
             </h1>
             {/* Glow Effect */}
             <div className="absolute inset-0 blur-2xl bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-pink-600/20 animate-pulse"></div>

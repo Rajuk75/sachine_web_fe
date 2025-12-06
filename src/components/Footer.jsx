@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { FaPhone, FaUsers, FaWarehouse, FaQuestionCircle } from "react-icons/fa";
+import { FaPhone, FaUsers, FaWarehouse, FaQuestionCircle, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { MdLocationOn, MdEmail } from "react-icons/md";
 import PATHS from "../routes/paths";
 
@@ -22,14 +22,14 @@ const Footer = () => {
         {/* Floating Card Footer */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 mb-12">
             <div className="bg-white rounded-3xl border border-gray-200 p-12 md:p-16">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                     
                     {/* Brand Column */}
                     <div className="md:col-span-1">
                         <div className="flex items-center mb-8">
                             <img 
-                                className="h-12 w-auto object-contain" 
-                                src="/adshamper_logo-removebg-preview.png" 
+                                className="h-20 w-auto object-contain" 
+                                src="/round logo.png" 
                                 alt="AdsHamper Logo" 
                                 loading="eager"
                             />
@@ -38,7 +38,12 @@ const Footer = () => {
                             Adshamper Pvt. Ltd. is a dynamic marketing and advertising company based in Kolkata, India.
                         </p>
                         <div className="flex space-x-4">
-                            {/* Social Placeholders if needed, or just keep it clean as per design */}
+                            <a href="https://www.linkedin.com/company/adshamper/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
+                                <FaLinkedin className="w-6 h-6" />
+                            </a>
+                            {/* <a href="https://www.instagram.com/adshamper/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600 transition-colors">
+                                <FaInstagram className="w-6 h-6" />
+                            </a> */}
                         </div>
                         <div className="mt-6 space-y-3">
                             <div className="flex items-center text-gray-600 text-sm">
@@ -53,25 +58,16 @@ const Footer = () => {
                     </div>
 
                     {/* Links Column 1 */}
-                    <div>
-                        <h4 className="text-sm font-bold mb-6 text-gray-900 uppercase tracking-wider">Quick Links</h4>
-                        <ul className="space-y-3">
-                            <li><Link to={PATHS.COMPANY} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">About Us</Link></li>
-                            <li><Link to={PATHS.COMPANY} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Contact Us</Link></li>
-                            <li><Link to={PATHS.PRIVACY_POLICY || "#"} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Privacy Policy</Link></li>
-                            <li><Link to={PATHS.TERMS_OF_SERVICE || "#"} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Terms & Conditions</Link></li>
-                        </ul>
-                    </div>
-
-                    {/* Links Column 3 */}
-                    <div>
-                        <h4 className="text-sm font-bold mb-6 text-gray-900 uppercase tracking-wider">Resources</h4>
-                        <ul className="space-y-3">
-                            <li><Link to={PATHS.RESOURCES} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Blogs</Link></li>
-                            <li><Link to={PATHS.RESOURCES} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Integrations</Link></li>
-                            <li><Link to={PATHS.RESOURCES} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Community</Link></li>
-                            <li><Link to={PATHS.RESOURCES} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Help Center</Link></li>
-                        </ul>
+                    <div className="flex flex-col md:items-end">
+                        <div className="w-fit text-left">
+                            <h4 className="text-sm font-bold mb-6 text-gray-900 uppercase tracking-wider">Quick Links</h4>
+                            <ul className="space-y-3">
+                                <li><Link to={PATHS.COMPANY} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">About Us</Link></li>
+                                <li><Link to={PATHS.COMPANY} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Contact Us</Link></li>
+                                <li><Link to={PATHS.PRIVACY_POLICY || "#"} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Privacy Policy</Link></li>
+                                <li><Link to={PATHS.TERMS_OF_SERVICE || "#"} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Terms & Conditions</Link></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -80,7 +76,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center">
             <div className="flex items-center space-x-4 text-sm text-gray-500">
-                <p>© {currentYear} AdsHamper. All rights reserved.</p>
+                <p>© {currentYear} Adshamper. All rights reserved.</p>
                 <span className="text-gray-300">|</span>
                 <Link to={PATHS.DISCLAIMER} className="hover:text-pink-600 transition-colors">Disclaimer</Link>
             </div>

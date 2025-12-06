@@ -88,9 +88,7 @@ const Solutions = () => {
                   <p className="text-lg text-gray-600 leading-relaxed mb-8">
                     {item.desc}
                   </p>
-                  <button className={`inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold text-white bg-gradient-to-r ${item.gradient} hover:shadow-lg hover:scale-105 transition-all duration-300`}>
-                    Know More <RiArrowRightLine className="w-5 h-5" />
-                  </button>
+
                 </div>
               </div>
             ))}
@@ -112,12 +110,12 @@ const Solutions = () => {
           <p className="text-gray-600 mb-8 text-lg">
             Let's discuss how our smart solutions can help you achieve your goals.
           </p>
-          <button 
-            onClick={() => window.location.href = 'https://adshamper.com/user/login/'}
-            className="bg-gray-900 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-800 transition-colors shadow-xl"
+          <a 
+            href="mailto:support@adshamper.com"
+            className="inline-block bg-gray-900 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-800 transition-colors shadow-xl"
           >
-            Get Started Today
-          </button>
+            support@adshamper.com
+          </a>
         </div>
       </div>
 

@@ -1,5 +1,7 @@
 import React from 'react';
 import { FaBullhorn, FaChartLine, FaCogs, FaSyncAlt, FaChartBar, FaArrowRight, FaCheckCircle, FaPlay, FaChartPie, FaLaptopCode, FaSearchDollar, FaVrCardboard, FaMobile, FaDatabase } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import PATHS from '../routes/paths';
 import RevealOnScroll from './ui/RevealOnScroll';
 
 const InfoSection = () => {
@@ -212,9 +214,9 @@ const InfoSection = () => {
                   ))}
                 </div>
 
-                <button className="w-fit px-8 py-3 bg-white text-blue-600 font-bold rounded-full shadow-lg hover:bg-[#dfff00] hover:text-dark transition-all duration-300 flex items-center gap-2">
+                <Link to={PATHS.PROGRAMMATIC_ADS} className="w-fit px-8 py-3 bg-white text-blue-600 font-bold rounded-full shadow-lg hover:bg-[#dfff00] hover:text-dark transition-all duration-300 flex items-center gap-2">
                   Know More <FaArrowRight />
-                </button>
+                </Link>
               </div>
 
             </div>

@@ -49,7 +49,7 @@ const Company = () => {
             About Us
           </span>
           <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-            We Are <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-600">AdsHamper</span>
+            We Are <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-600">Adshamper</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             Adshamper Pvt. Ltd. is a dynamic marketing and advertising company based in Kolkata, India. We're dedicated to transforming the digital performance marketing space with innovation, technology, and a strong focus on measurable results.
@@ -92,7 +92,7 @@ const Company = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-4xl font-bold text-gray-900 mb-6">
-                Why Choose <span className="text-blue-600">AdsHamper?</span>
+                Why Choose <span className="text-blue-600">Adshamper?</span>
               </h2>
               <p className="text-lg text-gray-600 mb-8 leading-relaxed">
                 We don't just run campaigns; we build brands. Our data-driven approach ensures that every penny you spend yields maximum returns. With a team of dedicated experts and cutting-edge technology, we are your partners in growth.

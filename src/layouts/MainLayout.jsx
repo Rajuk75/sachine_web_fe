@@ -1,9 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import LayoutWrapper from "../components/LayoutWrapper";
+import PATHS from "../routes/paths";
 
 const MainLayout = () => {
+  const location = useLocation();
+  const hideFooterPaths = [PATHS.PROGRAMMATIC_ADS];
+
   return (
     <>
       <Navbar />
@@ -12,7 +16,7 @@ const MainLayout = () => {
           <main className="flex-grow">
             <Outlet />
           </main>
-          <Footer />
+          {!hideFooterPaths.includes(location.pathname) && <Footer />}
         </LayoutWrapper>
       </div>
     </>

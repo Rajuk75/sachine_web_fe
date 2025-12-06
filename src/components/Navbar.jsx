@@ -30,7 +30,7 @@ const Navbar = () => {
              <img 
                 src="/adshamper_logo-removebg-preview.png" 
                 alt="AdsHamper" 
-                className="h-12 w-auto object-contain" 
+                className="h-16 w-auto object-contain" 
               />
           </div>
 
@@ -38,11 +38,10 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-8">
             {[
               { label: "Home", path: PATHS.HOME },
-              { label: "About", path: PATHS.COMPANY },
               { label: "Services", path: PATHS.SOLUTIONS },
-              { label: "Studio", path: PATHS.STUDIO },
-              { label: "Resources", path: PATHS.RESOURCES },
               { label: "Investor Relations", path: PATHS.INVESTORS },
+              { label: "About", path: PATHS.COMPANY },
+              { label: "Contact", path: PATHS.COMPANY },
             ].map((item, idx) => (
               <button
                 key={idx}
@@ -88,11 +87,9 @@ const Navbar = () => {
             <div className="flex flex-col space-y-3">
               {[
                 { label: "Home", path: PATHS.HOME },
-                { label: "About", path: PATHS.COMPANY },
                 { label: "Services", path: PATHS.SOLUTIONS },
-                { label: "Projects", path: PATHS.STUDIO },
-                { label: "Blog", path: PATHS.RESOURCES },
-                { label: "Team", path: PATHS.COMPANY },
+                { label: "Investor Relations", path: PATHS.INVESTORS },
+                { label: "About", path: PATHS.COMPANY },
                 { label: "Contact", path: PATHS.COMPANY }
               ].map((item, idx) => (
                 <button
