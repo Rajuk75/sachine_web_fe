@@ -7,7 +7,8 @@ const PageTemplate = ({
   subtitle, 
   children,
   gradientFrom = "blue",
-  gradientTo = "purple" 
+  gradientTo = "purple",
+  hideCard = false
 }) => {
 
   const gradientColors = {
@@ -19,15 +20,8 @@ const PageTemplate = ({
   };
 
   return (
-    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden bg-gradient-to-b from-blue-50 via-white to-purple-50">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className={`absolute top-20 left-10 w-96 h-96 rounded-full blur-3xl opacity-20 animate-pulse ${gradientColors[gradientFrom]}`} style={{ animationDuration: '4s' }}></div>
-        <div className={`absolute top-1/3 right-10 w-80 h-80 rounded-full blur-3xl opacity-20 animate-pulse ${gradientColors[gradientTo]}`} style={{ animationDuration: '6s', animationDelay: '1s' }}></div>
-        <div className={`absolute bottom-20 left-1/3 w-72 h-72 rounded-full blur-3xl opacity-20 animate-pulse ${gradientColors.pink}`} style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
-        <div className={`absolute top-1/4 left-1/4 w-2 h-2 rounded-full ${gradientColors[gradientFrom]} opacity-60 animate-pulse`}></div>
-        <div className={`absolute top-1/3 right-1/3 w-3 h-3 rounded-full ${gradientColors[gradientTo]} opacity-40 animate-pulse`} style={{ animationDelay: '1s' }}></div>
-        <div className={`absolute bottom-1/4 left-1/3 w-2 h-2 rounded-full ${gradientColors.pink} opacity-50 animate-pulse`} style={{ animationDelay: '2s' }}></div>
-      </div>
+    <div className="min-h-screen pt-24 pb-16 relative overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+      {/* Clean Background - No Blobs */}
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 animate-fade-in">
@@ -48,13 +42,13 @@ const PageTemplate = ({
             </p>
           )}
         </div>
-        <div className="rounded-2xl p-8 md:p-12 backdrop-blur-sm animate-fade-in-up bg-white/90 border border-gray-200 shadow-2xl shadow-blue-200/50" style={{ animationDelay: '0.2s' }}>
+        <div className={hideCard ? "animate-fade-in-up" : "rounded-2xl p-8 md:p-12 backdrop-blur-sm animate-fade-in-up bg-white/90 border border-gray-200 shadow-2xl shadow-blue-200/50"} style={{ animationDelay: '0.2s' }}>
           {children}
         </div>
         <div className="mt-8 text-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <a
             href={PATHS.HOME}
-            className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-${gradientFrom}-600 to-${gradientTo}-600 text-white rounded-xl font-semibold hover:from-${gradientFrom}-700 hover:to-${gradientTo}-700 hover:scale-105 transition-all shadow-lg hover:shadow-xl`}
+            className={`inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-${gradientFrom}-600 to-${gradientTo}-600 text-white rounded-xl font-semibold hover:from-${gradientFrom}-700 hover:to-${gradientTo}-700 hover:scale-105 transition-all`}
           >
             ← Back to Home
           </a>

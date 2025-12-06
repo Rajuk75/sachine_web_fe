@@ -2,20 +2,20 @@ import React from 'react';
 
 const ProjectSection = () => {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="flex flex-col md:flex-row justify-between items-end mb-12">
            <div className="max-w-2xl">
-              <div className="inline-block px-4 py-1 bg-pink-100 text-[#FF4F79] rounded-full text-sm font-bold tracking-wide uppercase mb-4">
+              <div className="inline-block px-4 py-1 bg-blue-50 text-primary rounded-full text-sm font-bold tracking-wide uppercase mb-4">
                 Case Studies
               </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-[#0a102e]">
-                 Our Latest <span className="text-[#FF4F79]">Projects</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-dark">
+                 Our Latest <span className="text-primary">Projects</span>
               </h2>
            </div>
            <div className="mt-6 md:mt-0">
-              <button className="px-8 py-3 bg-[#0a102e] text-white font-bold rounded-full hover:bg-[#0057FF] transition-colors">
+              <button className="px-8 py-3 bg-dark text-white font-bold rounded-full hover:bg-primary transition-colors">
                  View All Projects
               </button>
            </div>

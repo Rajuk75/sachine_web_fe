@@ -18,14 +18,15 @@ const Training = lazy(() => import("../pages/services/Training"));
 const Integration = lazy(() => import("../pages/services/Integration"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const TermsOfService = lazy(() => import("../pages/TermsOfService"));
+const Disclaimer = lazy(() => import("../pages/Disclaimer"));
 const NotFound = lazy(() => import("../pages/NotFound"));
 
 const AppRoutes = () => {
   return (
     <Suspense fallback={<PageLoader />}>
       <Routes>
+        <Route path={PATHS.HOME} element={<Home />} />
         <Route element={<MainLayout />}>
-          <Route path={PATHS.HOME} element={<Home />} />
           <Route path={PATHS.STUDIO} element={<Studio />} />
           <Route path={PATHS.TECHNOLOGY} element={<Technology />} />
           <Route path={PATHS.SOLUTIONS} element={<Solutions />} />
@@ -40,6 +41,7 @@ const AppRoutes = () => {
           <Route path={PATHS.INTEGRATION} element={<Integration />} />
           <Route path={PATHS.PRIVACY_POLICY} element={<PrivacyPolicy />} />
           <Route path={PATHS.TERMS_OF_SERVICE} element={<TermsOfService />} />
+          <Route path={PATHS.DISCLAIMER} element={<Disclaimer />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

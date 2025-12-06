@@ -1,365 +1,90 @@
-import { useLanguage } from "../context/LanguageContext";
+import React from 'react';
+import { Link } from "react-router-dom";
+import { FaPhone, FaUsers, FaWarehouse, FaQuestionCircle } from "react-icons/fa";
+import { MdLocationOn, MdEmail } from "react-icons/md";
 import PATHS from "../routes/paths";
 
+const currentYear = new Date().getFullYear();
+
 const Footer = () => {
-  const { t } = useLanguage();
-
   return (
-    <footer className="footer">
-      <div className="footer-inner">
+    <footer className="bg-white pt-20 pb-8 relative overflow-hidden">
         
-        {/* Brand Section */}
-        <div className="footer-section">
-          <div className="footer-brand">
-            {/* <span className="footer-brand-name">AdsHamper</span> */}
-          </div>
-          <p className="footer-description">
-            Adshamper Pvt. Ltd. is a dynamic marketing and advertising company based in Kolkata, India, dedicated to transforming the digital performance marketing space with innovation, technology, and a strong focus on measurable results.
-          </p>
-          <div className="footer-vision">
-            <strong>🚀 Our Vision:</strong>
-            <p>To become India's most trusted performance marketing and fintech advertising network, known for delivering Proof in Performance and Power in Results.</p>
-          </div>
-
+        {/* Top CTA Section */}
+        <div className="max-w-4xl mx-auto px-4 text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">Create Your Success Story</h2>
+            <p className="text-gray-600 mb-8">Let's brainstorm about transforming your business operations and achieve remarkable results!</p>
+            <a href="mailto:support@adshamper.com" className="inline-block bg-pink-500 text-white px-8 py-3 rounded-full font-bold hover:bg-pink-600 transition-colors shadow-lg hover:shadow-pink-200">
+                support@adshamper.com
+            </a>
         </div>
 
-        {/* Quick Links */}
-        <div className="footer-section">
-          <h3 className="footer-heading">{t.footer.quickLinks}</h3>
-          <ul className="footer-links">
-            <li><a href={PATHS.STUDIO}>{t.nav.studio}</a></li>
-            <li><a href={PATHS.TECHNOLOGY}>{t.nav.technology}</a></li>
-            <li><a href={PATHS.SOLUTIONS}>{t.nav.solutions}</a></li>
-            <li><a href={PATHS.COMPANY}>{t.nav.company}</a></li>
-            <li><a href={PATHS.RESOURCES}>{t.nav.resources}</a></li>
-            <li><a href={PATHS.INVESTORS}>{t.nav.investors}</a></li>
-          </ul>
-        </div>
+        {/* Floating Card Footer */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 mb-12">
+            <div className="bg-white rounded-3xl border border-gray-200 p-12 md:p-16">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                    
+                    {/* Brand Column */}
+                    <div className="md:col-span-1">
+                        <div className="flex items-center mb-8">
+                            <img 
+                                className="h-12 w-auto object-contain" 
+                                src="/adshamper_logo-removebg-preview.png" 
+                                alt="AdsHamper Logo" 
+                                loading="eager"
+                            />
+                        </div>
+                        <p className="text-gray-600 text-sm leading-relaxed mb-8">
+                            Adshamper Pvt. Ltd. is a dynamic marketing and advertising company based in Kolkata, India.
+                        </p>
+                        <div className="flex space-x-4">
+                            {/* Social Placeholders if needed, or just keep it clean as per design */}
+                        </div>
+                        <div className="mt-6 space-y-3">
+                            <div className="flex items-center text-gray-600 text-sm">
+                                <MdEmail className="text-pink-500 mr-3 w-5 h-5" />
+                                <span>support@adshamper.com</span>
+                            </div>
+                            <div className="flex items-center text-gray-600 text-sm">
+                                <FaPhone className="text-pink-500 mr-3 w-5 h-5" />
+                                <span>+91 9331156747</span>
+                            </div>
+                        </div>
+                    </div>
 
-        {/* Services */}
-        <div className="footer-section">
-          <h3 className="footer-heading">{t.footer.services}</h3>
-          <ul className="footer-links">
-            <li><a href={PATHS.CONSULTING}>{t.footer.consulting}</a></li>
-            <li><a href={PATHS.DEVELOPMENT}>{t.footer.development}</a></li>
-            <li><a href={PATHS.DESIGN}>{t.footer.design}</a></li>
-            <li><a href={PATHS.SUPPORT}>{t.footer.support}</a></li>
-            <li><a href={PATHS.TRAINING}>{t.footer.training}</a></li>
-            <li><a href={PATHS.INTEGRATION}>{t.footer.integration}</a></li>
-          </ul>
-        </div>
+                    {/* Links Column 1 */}
+                    <div>
+                        <h4 className="text-sm font-bold mb-6 text-gray-900 uppercase tracking-wider">Company</h4>
+                        <ul className="space-y-3">
+                            <li><Link to={PATHS.COMPANY} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">About Us</Link></li>
+                            <li><Link to={PATHS.COMPANY} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Contact Us</Link></li>
+                            <li><Link to={PATHS.PRIVACY_POLICY || "#"} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Privacy Policy</Link></li>
+                            <li><Link to={PATHS.TERMS_OF_SERVICE || "#"} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Terms & Conditions</Link></li>
+                        </ul>
+                    </div>
 
-        {/* Contact Info */}
-        <div className="footer-section">
-          <h3 className="footer-heading">{t.footer.contactInfo}</h3>
-          <div className="contact-info">
-            <div className="contact-item">
-              <strong>📍 {t.footer.address}:</strong>
-              <p>Hooghly, West Bengal<br />Kolkata, India</p>
+                    {/* Links Column 3 */}
+                    <div>
+                        <h4 className="text-sm font-bold mb-6 text-gray-900 uppercase tracking-wider">Resources</h4>
+                        <ul className="space-y-3">
+                            <li><Link to={PATHS.RESOURCES} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Blogs</Link></li>
+                            <li><Link to={PATHS.RESOURCES} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Integrations</Link></li>
+                            <li><Link to={PATHS.RESOURCES} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Community</Link></li>
+                            <li><Link to={PATHS.RESOURCES} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Help Center</Link></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div className="contact-item">
-              <strong>📞 {t.footer.phone}:</strong>
-              <p><a href="tel:+919331156747" className="contact-link">+91 9331156747</a></p>
-            </div>
-            <div className="contact-item">
-              <strong>✉️ {t.footer.email}:</strong>
-              <p>
-                <a href="mailto:support@adshamper.com" className="contact-link">support@adshamper.com</a>
-              </p>
-            </div>
-            <div className="contact-item">
-              <strong>🏢 Company:</strong>
-              <p>Adshamper Pvt. Ltd.<br />Performance Marketing & Ad-Tech</p>
-            </div>
-          </div>
         </div>
 
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="footer-bottom">
-        <div className="footer-bottom-inner">
-          <div className="footer-copy">
-            © {new Date().getFullYear()} {t.footer.copyright}
-          </div>
-          <div className="footer-legal">
-            <a href={PATHS.PRIVACY_POLICY}>{t.footer.privacyPolicy}</a>
-            <a href={PATHS.TERMS_OF_SERVICE}>{t.footer.termsOfService}</a>
-            <a href={PATHS.HOME}>Sitemap</a>
-          </div>
+        {/* Bottom Bar */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center space-x-4 text-sm text-gray-500">
+                <p>© {currentYear} AdsHamper. All rights reserved.</p>
+                <span className="text-gray-300">|</span>
+                <Link to={PATHS.DISCLAIMER} className="hover:text-pink-600 transition-colors">Disclaimer</Link>
+            </div>
         </div>
-      </div>
-
-      <style>{`
-        .footer {
-          background: linear-gradient(to bottom, #ffffff, #f9fafb);
-          color: #1f2937;
-          margin-top: auto;
-          border-top: 2px solid #e5e7eb;
-        }
-
-        .footer-inner {
-          max-width: 1280px;
-          margin: 0 auto;
-          padding: 60px 32px;
-          display: grid;
-          grid-template-columns: 2fr 1fr 1fr 1.5fr;
-          gap: 60px;
-        }
-
-        .footer-section {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .footer-brand {
-          display: flex;
-          align-items: center;
-          margin-bottom: 20px;
-        }
-
-        .footer-badge {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 48px;
-          height: 48px;
-          background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
-          border-radius: 12px;
-          font-weight: 900;
-          font-size: 24px;
-          margin-right: 14px;
-          color: white;
-          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
-        }
-
-        .footer-brand-name {
-          font-size: 24px;
-          font-weight: 800;
-          background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
-        .footer-description {
-          color: #6b7280;
-          line-height: 1.7;
-          margin-bottom: 20px;
-          font-size: 15px;
-        }
-
-        .footer-vision {
-          margin-bottom: 24px;
-          padding: 16px;
-          background: rgba(59, 130, 246, 0.1);
-          border-left: 3px solid #3b82f6;
-          border-radius: 8px;
-        }
-
-        .footer-vision strong {
-          display: block;
-          color: #3b82f6;
-          margin-bottom: 8px;
-          font-size: 15px;
-          font-weight: 700;
-        }
-
-        .footer-vision p {
-          color: #6b7280;
-          margin: 0;
-          font-size: 14px;
-          line-height: 1.6;
-        }
-
-        .footer-social {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-
-        .footer-social span {
-          color: #374151;
-          font-size: 14px;
-          font-weight: 600;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-
-        .social-links {
-          display: flex;
-          gap: 10px;
-          flex-wrap: wrap;
-        }
-
-        .social-link {
-          color: #ffffff;
-          background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-          text-decoration: none;
-          font-size: 13px;
-          font-weight: 600;
-          padding: 8px 16px;
-          border-radius: 8px;
-          transition: all 0.3s;
-          box-shadow: 0 2px 8px rgba(59, 130, 246, 0.2);
-        }
-
-        .social-link:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
-        }
-
-        .footer-heading {
-          font-size: 18px;
-          font-weight: 800;
-          margin-bottom: 20px;
-          color: #111827;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-
-        .footer-links {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-
-        .footer-links li {
-          margin-bottom: 12px;
-        }
-
-        .footer-links a {
-          color: #6b7280;
-          text-decoration: none;
-          font-size: 15px;
-          font-weight: 500;
-          transition: all 0.3s;
-          display: inline-block;
-        }
-
-        .footer-links a:hover {
-          color: #3b82f6;
-          transform: translateX(4px);
-        }
-
-        .contact-info {
-          display: flex;
-          flex-direction: column;
-          gap: 20px;
-        }
-
-        .contact-item strong {
-          display: block;
-          color: #111827;
-          margin-bottom: 6px;
-          font-size: 14px;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.5px;
-        }
-
-        .contact-item p {
-          color: #6b7280;
-          margin: 0;
-          font-size: 14px;
-          line-height: 1.6;
-          font-weight: 500;
-        }
-
-        .contact-link {
-          color: #3b82f6;
-          text-decoration: none;
-          font-weight: 600;
-          transition: all 0.3s;
-          display: inline-block;
-        }
-
-        .contact-link:hover {
-          color: #2563eb;
-          transform: translateX(2px);
-        }
-
-        .footer-bottom {
-          border-top: 2px solid #e5e7eb;
-          background: #f3f4f6;
-        }
-
-        .footer-bottom-inner {
-          max-width: 1280px;
-          margin: 0 auto;
-          padding: 24px 32px;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .footer-copy {
-          color: #6b7280;
-          font-size: 14px;
-          font-weight: 600;
-        }
-
-        .footer-legal {
-          display: flex;
-          gap: 24px;
-        }
-
-        .footer-legal a {
-          color: #6b7280;
-          text-decoration: none;
-          font-size: 14px;
-          font-weight: 600;
-          transition: all 0.3s;
-        }
-
-        .footer-legal a:hover {
-          color: #3b82f6;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-          .footer-inner {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            padding: 30px 20px;
-          }
-
-          .footer-bottom-inner {
-            flex-direction: column;
-            gap: 12px;
-            text-align: center;
-          }
-
-          .footer-legal {
-            justify-content: center;
-          }
-
-          .footer-social {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 8px;
-          }
-
-          .social-links {
-            flex-wrap: wrap;
-          }
-        }
-
-        @media (max-width: 480px) {
-          .footer-inner {
-            padding: 20px 16px;
-          }
-
-          .footer-bottom-inner {
-            padding: 16px;
-          }
-
-          .footer-legal {
-            flex-direction: column;
-            gap: 8px;
-          }
-        }
-      `}</style>
     </footer>
   );
 };

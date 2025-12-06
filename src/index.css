@@ -203,3 +203,48 @@ svg *:focus {
 .animate-scroll:hover {
   animation-play-state: paused;
 }
+
+/* Orbit Animations */
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes orbit-reverse {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 20s linear infinite;
+}
+
+.animate-orbit-slow {
+  animation: orbit 30s linear infinite;
+}
+
+.animate-orbit-slower {
+  animation: orbit 40s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-reverse 20s linear infinite;
+}
+
+.animate-orbit-reverse-slow {
+  animation: orbit-reverse 30s linear infinite;
+}
+
+.animate-orbit-reverse-slower {
+  animation: orbit-reverse 40s linear infinite;
+}

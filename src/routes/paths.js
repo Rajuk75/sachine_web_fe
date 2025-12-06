@@ -15,6 +15,7 @@ export const PATHS = {
   INTEGRATION: '/services/integration',
   PRIVACY_POLICY: '/privacy-policy',
   TERMS_OF_SERVICE: '/terms-of-service',
+  DISCLAIMER: '/disclaimer',
 };
 
 export default PATHS;

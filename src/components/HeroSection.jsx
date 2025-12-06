@@ -1,147 +1,420 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useLanguage } from "../context/LanguageContext";
-import PaperTornFrame from "./PaperTornFrame";
+import { FaLaptop, FaCode, FaServer, FaMobile, FaCloud, FaRocket, FaDatabase } from 'react-icons/fa';
 
 const HeroSection = () => {
   const { t } = useLanguage();
-  const [currentSlide, setCurrentSlide] = useState(0);
 
-  // Slide Data: Vibrant Background Images with Subjects strictly on the Right
-  const slides = [
-    {
-      id: 1,
-      image: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop", // Meeting (People on right)
-    },
-    {
-      id: 2,
-      image: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop", // Team High Five (Right oriented)
-    },
-    {
-      id: 3,
-      image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop", // Office Collab (Right side focus)
-    }
-  ];
-
-  // Auto-slide logic
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 5000); // Change every 5 seconds
-    return () => clearInterval(interval);
-  }, [slides.length]);
+  const IconWrapper = ({ children, color = "bg-blue-100 text-blue-600" }) => (
+    <div className={`w-full h-full rounded-full flex items-center justify-center ${color} shadow-sm`}>
+      {children}
+    </div>
+  );
 
   return (
-    <section className="relative min-h-screen flex flex-col">
+    <section className="relative min-h-screen overflow-hidden flex items-center pt-28 pb-12 bg-gradient-to-br from-sky-50 via-blue-50 to-blue-100">
       
-      {/* Hero Content Wrapper - Full Screen Height initially */}
-      <div className="relative h-screen flex items-center overflow-hidden">
-        {/* Background Carousel with Ken Burns Effect */}
-        {slides.map((slide, index) => (
-          <div 
-            key={slide.id}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === currentSlide ? 'opacity-100' : 'opacity-0'
-            }`}
-          >
-            {/* Image with Zoom Animation - Anchored to RIGHT */}
-            <div 
-              className={`absolute inset-0 bg-cover bg-right md:bg-[center_right] transition-transform duration-[10000ms] ease-linear ${
-                index === currentSlide ? 'scale-110' : 'scale-100'
-              }`}
-              style={{ backgroundImage: `url(${slide.image})` }}
-            >
-              {/* Gradient Overlay: Darker on Left for Text, Transparent on Right for Image */}
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0a102e]/90 via-[#0a102e]/60 to-transparent"></div>
-            </div>
-          </div>
-        ))}
+      {/* Abstract Background Elements */}
+      <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+        {/* Soft Gradient Orb Top Left */}
+        <div className="absolute -top-20 -left-20 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl"></div>
+        
+        {/* Abstract Curved Lines (SVG) */}
+        <svg className="absolute top-0 left-0 w-full h-full opacity-30" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <path d="M-100 600 C 200 400, 400 800, 800 200 S 1200 0, 1500 200" stroke="url(#grad1)" strokeWidth="2" fill="none" />
+           <path d="M-100 650 C 200 450, 400 850, 800 250 S 1200 50, 1500 250" stroke="url(#grad1)" strokeWidth="2" fill="none" />
+           <path d="M-100 700 C 200 500, 400 900, 800 300 S 1200 100, 1500 300" stroke="url(#grad1)" strokeWidth="2" fill="none" />
+           <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                 <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.2" />
+                 <stop offset="100%" stopColor="#2563eb" stopOpacity="0.8" />
+              </linearGradient>
+           </defs>
+        </svg>
 
-        {/* Content Overlay */}
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-20">
-          <div className="max-w-4xl">
+        {/* Floating Spheres/Circles */}
+        <div className="absolute top-1/4 left-10 w-16 h-16 rounded-full bg-gradient-to-br from-blue-300 to-blue-600 opacity-20 blur-sm animate-float-slow"></div>
+        <div className="absolute bottom-1/3 left-1/3 w-8 h-8 rounded-full bg-blue-400 opacity-30 animate-float-delayed"></div>
+        
+        {/* Connected Dots Pattern */}
+        <div className="absolute top-1/2 left-20 w-64 h-64 opacity-10" style={{ backgroundImage: 'radial-gradient(#2563eb 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+      </div>
+
+      <div className="w-full px-4 sm:px-8 lg:px-20 relative z-10 h-full flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+          
+          {/* Left Content - Clean Space */}
+          <div className="space-y-8 relative z-20 -mt-20 text-center lg:text-left">
+             <div className="flex w-fit items-center gap-2 px-3 py-1 bg-white/50 backdrop-blur-sm border border-blue-100 rounded-full mx-auto">
+                <span className="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span className="text-primary font-bold tracking-wider uppercase text-xs">Future Ads Agency</span>
+             </div>
+             
+             <h1 className="text-5xl md:text-7xl font-bold text-dark leading-tight">
+                Scale your app <br />
+                growth <span className="text-[#facc15]">with high-value users</span>
+             </h1>
+             
+             <p className="text-gray-600 text-xl md:text-2xl max-w-2xl leading-relaxed mt-6">
+                Level up your mobile app user acquisition, retention and brand performance with <span className="text-rose-600 font-semibold">predictive algorithms and machine learning</span>
+             </p>
+             
+             <div className="flex flex-wrap items-center gap-6">
+                <a href="https://adshamper.com/user/register/" className="relative px-8 py-4 bg-blue-700 text-white font-bold rounded-full shadow-lg shadow-blue-500/30 overflow-hidden group hover:scale-105 transition-all duration-300">
+                   <span className="relative z-10">Get Started</span>
+                   <div className="absolute top-0 -left-[100%] w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent group-hover:left-[100%] transition-all duration-500 ease-in-out"></div>
+                </a>
+                <a href="https://adshamper.com/user/login/" className="px-8 py-4 bg-white text-dark font-bold rounded-full shadow-md hover:bg-gray-50 transition-all duration-300 flex items-center gap-2">
+                   Login
+                </a>
+             </div>
+          </div>
+
+          {/* Right Content - Orbiting Animation */}
+          <div className="relative h-[600px] w-full flex items-center justify-center perspective-1000">
             
-            {/* Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-600/30 border border-blue-400/50 backdrop-blur-md rounded-full text-white text-sm font-bold tracking-wider uppercase mb-8 animate-fade-in-up">
-              <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
-              #1 Digital Marketing Agency
+            <div className="absolute z-20 text-center max-w-[200px]">
+              <div className="text-4xl font-bold text-dark mb-2">100+</div>
+              <div className="text-gray-600 text-sm font-medium leading-tight">
+                Successful Projects Delivered Globally
+              </div>
             </div>
 
-            {/* Animated Heading (Top/Bottom Slide) */}
-            <h1 className="text-5xl md:text-7xl font-bold text-white leading-tight mb-8">
-              {/* Line 1: Slides Down from Top */}
-              <div className="overflow-hidden pt-2 pb-4 -mb-4"> {/* Added pb-4 and negative margin to compensate layout but keep visual space */}
-                <span key={`l1-${currentSlide}`} className="block animate-slide-down">
-                   Scale your app growth
-                </span>
-              </div>
-              
-              {/* Line 2: Slides Up from Bottom */}
-              <div className="overflow-hidden pt-2 pb-4 -mb-4 mt-2">
-                <span key={`l2-${currentSlide}`} className="block">
-                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-pink-500 animate-slide-up inline-block pb-1"> {/* Added pb-1 to span as well */}
-                     with high-value users
-                   </span>
-                </span>
-              </div>
-            </h1>
+            {/* Inner Orbit */}
+            <div className="absolute w-[280px] h-[280px] border border-blue-200/60 rounded-full animate-orbit-slow">
+               <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 rounded-full p-1 bg-white border border-blue-100 shadow-md animate-orbit-reverse-slow">
+                 <IconWrapper color="bg-blue-100 text-blue-600"><FaCode className="w-6 h-6" /></IconWrapper>
+               </div>
+               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-10 h-10 rounded-full p-1 bg-white border border-blue-100 shadow-md animate-orbit-reverse-slow">
+                 <IconWrapper color="bg-sky-100 text-sky-600"><FaMobile className="w-5 h-5" /></IconWrapper>
+               </div>
+            </div>
 
-            {/* Subtitle */}
-            <p className="text-lg md:text-xl text-gray-100 max-w-2xl leading-relaxed mb-10 font-medium drop-shadow-md animate-fade-in-up delay-300">
-              {t.hero.subtitle} {t.hero.predictiveAlgorithms} {t.hero.and} {t.hero.machineLearning}.
-              <br className="hidden md:block" />
-              Transform your digital presence with ultra-fast, expressive, and scalable solutions.
-            </p>
+            {/* Middle Orbit */}
+            <div className="absolute w-[450px] h-[450px] border border-blue-200/50 rounded-full animate-orbit">
+               <div className="absolute top-1/4 left-0 -translate-x-1/2 w-14 h-14 rounded-full p-1 bg-white border border-blue-100 shadow-lg animate-orbit-reverse">
+                 <IconWrapper color="bg-indigo-100 text-indigo-600"><FaCloud className="w-7 h-7" /></IconWrapper>
+                 <div className="absolute -top-1 -right-1 w-5 h-5 bg-primary rounded-full flex items-center justify-center border border-white text-white">
+                    <span className="text-[10px] font-bold">1</span>
+                 </div>
+               </div>
+               <div className="absolute bottom-1/4 right-0 translate-x-1/2 w-12 h-12 rounded-full p-1 bg-white border border-blue-100 shadow-lg animate-orbit-reverse">
+                 <IconWrapper color="bg-cyan-100 text-cyan-600"><FaDatabase className="w-6 h-6" /></IconWrapper>
+               </div>
+               <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 w-16 h-16 rounded-full p-1 bg-white border border-blue-100 shadow-lg animate-orbit-reverse">
+                 <IconWrapper color="bg-blue-50 text-primary"><FaServer className="w-8 h-8" /></IconWrapper>
+               </div>
+            </div>
 
-            {/* Buttons: Login & Sign Up */}
-            <div className="flex flex-wrap gap-5 animate-fade-in-up delay-500">
-              <a href="https://adshamper.com/user/register/" target="_blank" rel="noopener noreferrer">
-                <button className="px-10 py-4 bg-blue-600 text-white font-bold rounded-full shadow-lg shadow-blue-600/40 hover:bg-blue-700 hover:-translate-y-1 transition-all duration-300 border border-transparent">
-                  Sign Up
-                </button>
-              </a>
-              <a href="https://adshamper.com/user/login/" target="_blank" rel="noopener noreferrer">
-                <button className="px-10 py-4 bg-white/10 backdrop-blur-md text-white font-bold rounded-full border border-white/30 hover:bg-white/20 hover:border-white/50 transition-all duration-300 flex items-center gap-2">
-                  <span>🔐</span> Login
-                </button>
-              </a>
+            {/* Outer Orbit */}
+            <div className="absolute w-[620px] h-[620px] border border-blue-100/40 rounded-full animate-orbit-slower">
+               <div className="absolute top-1/2 right-0 translate-x-1/2 w-14 h-14 rounded-full p-1 bg-white border border-blue-100 shadow-lg animate-orbit-reverse-slower">
+                 <div className="w-full h-full rounded-full bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center text-white">
+                    <FaRocket className="w-7 h-7" />
+                 </div>
+               </div>
+               <div className="absolute top-0 left-1/4 w-10 h-10 rounded-full p-1 bg-white border border-blue-100 shadow-md animate-orbit-reverse-slower opacity-80">
+                 <IconWrapper color="bg-gray-100 text-gray-600"><FaLaptop className="w-5 h-5" /></IconWrapper>
+               </div>
             </div>
 
           </div>
-        </div>
 
-        {/* Slider Indicators */}
-        <div className="absolute bottom-40 left-1/2 -translate-x-1/2 flex gap-3 z-20">
-          {slides.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentSlide(index)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'bg-blue-500 w-8' : 'bg-white/50 w-2 hover:bg-white'
-              }`}
-            />
+        </div>
+      </div>
+
+      {/* Brand Marquee Integration - Seamless */}
+      <div className="absolute bottom-0 left-0 w-full py-6 z-20 overflow-hidden border-t border-white/20 bg-white/10 backdrop-blur-sm">
+        <div className="flex animate-scroll whitespace-nowrap">
+          {[
+            // Clients Data
+            {
+              name: 'Amazon',
+              component: (
+                <svg className="h-8 w-20" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="5" y="22" className="text-xl font-bold fill-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>amazon</text>
+                  <path d="M 15 28 Q 35 32, 55 28" stroke="#FF9900" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                  <path d="M 53 26 L 55 28 L 53 30" stroke="#FF9900" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              )
+            },
+            {
+              name: 'BYBIT',
+              component: (
+                <div className="text-center">
+                  <div className="text-xl font-bold text-gray-600">BYBIT</div>
+                  <div className="text-[10px] text-yellow-500 font-semibold">EXCHANGE</div>
+                </div>
+              )
+            },
+            {
+              name: 'Dream11',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">D</span>
+                  </div>
+                  <span className="text-lg font-bold text-gray-600">DREAM11</span>
+                </div>
+              )
+            },
+            {
+              name: 'Groww',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-xs">G</span>
+                  </div>
+                  <span className="text-lg font-bold text-gray-600">Groww</span>
+                </div>
+              )
+            },
+            {
+              name: 'KreditPintar',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-green-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">K</span>
+                  </div>
+                  <span className="text-base font-bold text-gray-600">KreditPintar</span>
+                </div>
+              )
+            },
+            {
+              name: 'Lazada',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
+                    <div className="w-5 h-5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full -ml-2"></div>
+                  </div>
+                  <span className="text-lg font-bold text-gray-600">Lazada</span>
+                </div>
+              )
+            }
+          ].concat([
+            // Duplicate 1
+            {
+              name: 'Amazon',
+              component: (
+                <svg className="h-8 w-20" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="5" y="22" className="text-xl font-bold fill-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>amazon</text>
+                  <path d="M 15 28 Q 35 32, 55 28" stroke="#FF9900" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                  <path d="M 53 26 L 55 28 L 53 30" stroke="#FF9900" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              )
+            },
+            {
+              name: 'BYBIT',
+              component: (
+                <div className="text-center">
+                  <div className="text-xl font-bold text-gray-600">BYBIT</div>
+                  <div className="text-[10px] text-yellow-500 font-semibold">EXCHANGE</div>
+                </div>
+              )
+            },
+            {
+              name: 'Dream11',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">D</span>
+                  </div>
+                  <span className="text-lg font-bold text-gray-600">DREAM11</span>
+                </div>
+              )
+            },
+            {
+              name: 'Groww',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-xs">G</span>
+                  </div>
+                  <span className="text-lg font-bold text-gray-600">Groww</span>
+                </div>
+              )
+            },
+            {
+              name: 'KreditPintar',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-green-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">K</span>
+                  </div>
+                  <span className="text-base font-bold text-gray-600">KreditPintar</span>
+                </div>
+              )
+            },
+            {
+              name: 'Lazada',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
+                    <div className="w-5 h-5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full -ml-2"></div>
+                  </div>
+                  <span className="text-lg font-bold text-gray-600">Lazada</span>
+                </div>
+              )
+            },
+            // Duplicate 2
+            {
+              name: 'Amazon',
+              component: (
+                <svg className="h-8 w-20" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="5" y="22" className="text-xl font-bold fill-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>amazon</text>
+                  <path d="M 15 28 Q 35 32, 55 28" stroke="#FF9900" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                  <path d="M 53 26 L 55 28 L 53 30" stroke="#FF9900" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              )
+            },
+            {
+              name: 'BYBIT',
+              component: (
+                <div className="text-center">
+                  <div className="text-xl font-bold text-gray-600">BYBIT</div>
+                  <div className="text-[10px] text-yellow-500 font-semibold">EXCHANGE</div>
+                </div>
+              )
+            },
+            {
+              name: 'Dream11',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">D</span>
+                  </div>
+                  <span className="text-lg font-bold text-gray-600">DREAM11</span>
+                </div>
+              )
+            },
+            {
+              name: 'Groww',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-xs">G</span>
+                  </div>
+                  <span className="text-lg font-bold text-gray-600">Groww</span>
+                </div>
+              )
+            },
+            {
+              name: 'KreditPintar',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-green-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">K</span>
+                  </div>
+                  <span className="text-base font-bold text-gray-600">KreditPintar</span>
+                </div>
+              )
+            },
+            {
+              name: 'Lazada',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
+                    <div className="w-5 h-5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full -ml-2"></div>
+                  </div>
+                  <span className="text-lg font-bold text-gray-600">Lazada</span>
+                </div>
+              )
+            },
+            // Duplicate 3
+            {
+              name: 'Amazon',
+              component: (
+                <svg className="h-8 w-20" viewBox="0 0 100 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <text x="5" y="22" className="text-xl font-bold fill-gray-600" style={{ fontFamily: 'Arial, sans-serif' }}>amazon</text>
+                  <path d="M 15 28 Q 35 32, 55 28" stroke="#FF9900" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+                  <path d="M 53 26 L 55 28 L 53 30" stroke="#FF9900" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              )
+            },
+            {
+              name: 'BYBIT',
+              component: (
+                <div className="text-center">
+                  <div className="text-xl font-bold text-gray-600">BYBIT</div>
+                  <div className="text-[10px] text-yellow-500 font-semibold">EXCHANGE</div>
+                </div>
+              )
+            },
+            {
+              name: 'Dream11',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">D</span>
+                  </div>
+                  <span className="text-lg font-bold text-gray-600">DREAM11</span>
+                </div>
+              )
+            },
+            {
+              name: 'Groww',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-xs">G</span>
+                  </div>
+                  <span className="text-lg font-bold text-gray-600">Groww</span>
+                </div>
+              )
+            },
+            {
+              name: 'KreditPintar',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 bg-green-500 rounded-lg flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">K</span>
+                  </div>
+                  <span className="text-base font-bold text-gray-600">KreditPintar</span>
+                </div>
+              )
+            },
+            {
+              name: 'Lazada',
+              component: (
+                <div className="flex items-center space-x-2">
+                  <div className="flex items-center">
+                    <div className="w-5 h-5 bg-gradient-to-r from-pink-500 to-purple-500 rounded-full"></div>
+                    <div className="w-5 h-5 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full -ml-2"></div>
+                  </div>
+                  <span className="text-lg font-bold text-gray-600">Lazada</span>
+                </div>
+              )
+            }
+          ]).map((client, idx) => (
+            <div 
+              key={idx}
+              className="mx-16 flex items-center justify-center min-w-[140px] opacity-90 hover:opacity-100 transition-opacity duration-300"
+            >
+              <div className="transform scale-125 hover:scale-135 transition-transform duration-300">
+                {client.component}
+              </div>
+            </div>
           ))}
         </div>
       </div>
-
-      {/* Remove old SVG torn paper effect, and add PaperTornFrame at the bottom */}
-      <div className="absolute bottom-0 left-0 w-full z-30 leading-none pointer-events-none select-none">
-        <PaperTornFrame />
-      </div>
-      {/* Custom Animations here */}
+      
       <style jsx>{`
-        @keyframes slideDown {
-          from { transform: translateY(-100%); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
+        @keyframes float-slow {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-20px); }
         }
-        @keyframes slideUp {
-          from { transform: translateY(100%); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
+        @keyframes float-delayed {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-15px); }
         }
-        .animate-slide-down {
-          animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        .animate-float-slow {
+          animation: float-slow 6s ease-in-out infinite;
         }
-        .animate-slide-up {
-          animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        .animate-float-delayed {
+          animation: float-delayed 8s ease-in-out infinite 2s;
         }
       `}</style>
     </section>
