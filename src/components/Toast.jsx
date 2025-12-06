@@ -1,5 +1,4 @@
 import { createContext, useContext, useState, useCallback } from "react";
-import { useTheme } from "../context/ThemeContext";
 
 const ToastContext = createContext();
 
@@ -33,7 +32,6 @@ export const ToastProvider = ({ children }) => {
 };
 
 const ToastContainer = ({ toasts, removeToast }) => {
-  const { theme } = useTheme();
 
   const getIcon = (type) => {
     switch(type) {
@@ -46,10 +44,10 @@ const ToastContainer = ({ toasts, removeToast }) => {
 
   const getColors = (type) => {
     switch(type) {
-      case 'success': return theme === 'dark' ? 'from-green-600 to-emerald-600' : 'from-green-500 to-emerald-500';
-      case 'error': return theme === 'dark' ? 'from-red-600 to-rose-600' : 'from-red-500 to-rose-500';
-      case 'warning': return theme === 'dark' ? 'from-yellow-600 to-orange-600' : 'from-yellow-500 to-orange-500';
-      default: return theme === 'dark' ? 'from-blue-600 to-purple-600' : 'from-blue-500 to-purple-500';
+      case 'success': return 'from-green-500 to-emerald-500';
+      case 'error': return 'from-red-500 to-rose-500';
+      case 'warning': return 'from-yellow-500 to-orange-500';
+      default: return 'from-blue-500 to-purple-500';
     }
   };
 

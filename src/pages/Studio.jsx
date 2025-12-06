@@ -1,10 +1,8 @@
 import { useLanguage } from "../context/LanguageContext";
-import { useTheme } from "../context/ThemeContext";
 import PageTemplate from "../components/PageTemplate";
 
 const Studio = () => {
   const { t } = useLanguage();
-  const { theme } = useTheme();
 
   return (
     <PageTemplate
@@ -15,18 +13,18 @@ const Studio = () => {
       gradientFrom="blue"
       gradientTo="purple"
     >
-      <div className={`prose max-w-none ${theme === 'dark' ? 'prose-invert' : ''}`}>
+      <div className="prose max-w-none">
         <section className="mb-8">
-          <h2 className={`text-3xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">
             Welcome to Our Studio
           </h2>
-          <p className={`text-lg leading-relaxed mb-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+          <p className="text-lg leading-relaxed mb-6 text-gray-700">
             Our creative studio brings together talented designers, developers, and strategists to create exceptional digital experiences. We combine creativity with technology to deliver solutions that not only look great but also drive results.
           </p>
         </section>
 
         <section className="mb-8">
-          <h3 className={`text-2xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+          <h3 className="text-2xl font-bold mb-4 text-gray-900">
             What We Offer
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
@@ -36,14 +34,12 @@ const Studio = () => {
               { icon: '📱', title: 'Mobile Apps', desc: 'Build intuitive mobile applications for iOS and Android platforms' },
               { icon: '🎬', title: 'Video Production', desc: 'Produce engaging video content that tells your brand story' }
             ].map((service, idx) => (
-              <div key={idx} className={`p-6 rounded-xl ${
-                theme === 'dark' ? 'bg-gray-700/50' : 'bg-gray-50'
-              }`}>
+              <div key={idx} className="p-6 rounded-xl bg-gray-50">
                 <div className="text-4xl mb-3">{service.icon}</div>
-                <h4 className={`text-xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                <h4 className="text-xl font-bold mb-2 text-gray-900">
                   {service.title}
                 </h4>
-                <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}>
+                <p className="text-gray-600">
                   {service.desc}
                 </p>
               </div>
@@ -52,7 +48,7 @@ const Studio = () => {
         </section>
 
         <section>
-          <h3 className={`text-2xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+          <h3 className="text-2xl font-bold mb-4 text-gray-900">
             Our Process
           </h3>
           <div className="space-y-4">
@@ -62,17 +58,15 @@ const Studio = () => {
               { step: '03', title: 'Development', desc: 'Building with cutting-edge technology' },
               { step: '04', title: 'Launch', desc: 'Deploying and optimizing for success' }
             ].map((process, idx) => (
-              <div key={idx} className={`flex gap-4 p-4 rounded-lg ${
-                theme === 'dark' ? 'bg-gray-700/30' : 'bg-blue-50'
-              }`}>
-                <div className={`text-3xl font-bold ${theme === 'dark' ? 'text-blue-400' : 'text-blue-600'}`}>
+              <div key={idx} className="flex gap-4 p-4 rounded-lg bg-blue-50">
+                <div className="text-3xl font-bold text-blue-600">
                   {process.step}
                 </div>
                 <div>
-                  <h5 className={`text-lg font-bold mb-1 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                  <h5 className="text-lg font-bold mb-1 text-gray-900">
                     {process.title}
                   </h5>
-                  <p className={theme === 'dark' ? 'text-gray-400' : 'text-gray-600'}>
+                  <p className="text-gray-600">
                     {process.desc}
                   </p>
                 </div>

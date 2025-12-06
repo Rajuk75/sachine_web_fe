@@ -1,8 +1,5 @@
-import { useTheme } from "../context/ThemeContext";
 
 const WaveSeparator = () => {
-  const { theme } = useTheme();
-  const isDark = theme === "dark";
 
   return (
     <div className="w-full overflow-hidden leading-none relative z-10 -mt-40 mb-0 pointer-events-none">
@@ -25,8 +22,8 @@ const WaveSeparator = () => {
           50% { opacity: 0.4; transform: translateY(-5px); }
         }
         @keyframes gradient-shift {
-          0%, 100% { stop-color: ${isDark ? "#3b82f6" : "#60a5fa"}; }
-          50% { stop-color: ${isDark ? "#60a5fa" : "#93c5fd"}; }
+          0%, 100% { stop-color: #60a5fa; }
+          50% { stop-color: #93c5fd; }
         }
         .wave-layer-1 { animation: wave-flow-1 10s ease-in-out infinite; }
         .wave-layer-2 { animation: wave-flow-2 7s ease-in-out infinite; }
@@ -43,20 +40,20 @@ const WaveSeparator = () => {
         <defs>
           {/* Blue Gradient */}
           <linearGradient id="wave-blue" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor={isDark ? "#1e40af" : "#3b82f6"} />
-            <stop offset="100%" stopColor={isDark ? "#3b82f6" : "#60a5fa"} />
+            <stop offset="0%" stopColor="#3b82f6" />
+            <stop offset="100%" stopColor="#60a5fa" />
           </linearGradient>
 
           {/* Purple Gradient */}
           <linearGradient id="wave-purple" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor={isDark ? "#7c3aed" : "#a78bfa"} />
-            <stop offset="100%" stopColor={isDark ? "#a78bfa" : "#c4b5fd"} />
+            <stop offset="0%" stopColor="#a78bfa" />
+            <stop offset="100%" stopColor="#c4b5fd" />
           </linearGradient>
 
           {/* Enhanced Glow Filter */}
           <filter id="wave-glow" x="-50%" y="-50%" width="200%" height="200%">
             <feGaussianBlur stdDeviation="25" result="blur" />
-            <feFlood floodColor={isDark ? "#60a5fa" : "#93c5fd"} floodOpacity="0.5" />
+            <feFlood floodColor="#93c5fd" floodOpacity="0.5" />
             <feComposite in2="blur" operator="in" result="glow" />
             <feComposite in="SourceGraphic" in2="glow" operator="over" />
           </filter>
@@ -108,22 +105,22 @@ const WaveSeparator = () => {
 
         {/* Top Highlight Accent */}
         <path
-          fill={isDark ? "rgba(167, 139, 250, 0.15)" : "rgba(255, 255, 255, 0.25)"}
+          fill="rgba(255, 255, 255, 0.25)"
           d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,198L1392,188L1344,178C1248,168,1152,158,1056,163C960,168,864,188,768,198C672,208,576,208,480,198C384,188,288,168,192,163C96,158,48,168,24,173L0,178Z"
         />
 
         {/* Sparkle Effect */}
         <g opacity="0.6">
-          <circle cx="200" cy="190" r="2" fill={isDark ? "#c4b5fd" : "#fff"}>
+          <circle cx="200" cy="190" r="2" fill="#fff">
             <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" />
           </circle>
-          <circle cx="600" cy="210" r="2" fill={isDark ? "#93c5fd" : "#fff"}>
+          <circle cx="600" cy="210" r="2" fill="#fff">
             <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite" begin="1s" />
           </circle>
-          <circle cx="1000" cy="180" r="2" fill={isDark ? "#c4b5fd" : "#fff"}>
+          <circle cx="1000" cy="180" r="2" fill="#fff">
             <animate attributeName="opacity" values="0;1;0" dur="3.5s" repeatCount="indefinite" begin="0.5s" />
           </circle>
-          <circle cx="1300" cy="200" r="2" fill={isDark ? "#93c5fd" : "#fff"}>
+          <circle cx="1300" cy="200" r="2" fill="#fff">
             <animate attributeName="opacity" values="0;1;0" dur="4.5s" repeatCount="indefinite" begin="2s" />
           </circle>
         </g>

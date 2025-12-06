@@ -1,7 +1,5 @@
-import { useTheme } from "../context/ThemeContext";
 
 const WaveBackground = () => {
-  const { theme } = useTheme();
 
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -14,19 +12,19 @@ const WaveBackground = () => {
       >
         <defs>
           <linearGradient id="wave1" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor={theme === 'dark' ? '#1e3a8a' : '#3b82f6'} stopOpacity="0.3" />
-            <stop offset="50%" stopColor={theme === 'dark' ? '#7c3aed' : '#8b5cf6'} stopOpacity="0.3" />
-            <stop offset="100%" stopColor={theme === 'dark' ? '#db2777' : '#ec4899'} stopOpacity="0.3" />
+            <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.3" />
+            <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#ec4899" stopOpacity="0.3" />
           </linearGradient>
           <linearGradient id="wave2" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor={theme === 'dark' ? '#1e40af' : '#60a5fa'} stopOpacity="0.2" />
-            <stop offset="50%" stopColor={theme === 'dark' ? '#8b5cf6' : '#a78bfa'} stopOpacity="0.2" />
-            <stop offset="100%" stopColor={theme === 'dark' ? '#ec4899' : '#f472b6'} stopOpacity="0.2" />
+            <stop offset="0%" stopColor="#60a5fa" stopOpacity="0.2" />
+            <stop offset="50%" stopColor="#a78bfa" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#f472b6" stopOpacity="0.2" />
           </linearGradient>
           <linearGradient id="wave3" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor={theme === 'dark' ? '#2563eb' : '#93c5fd'} stopOpacity="0.15" />
-            <stop offset="50%" stopColor={theme === 'dark' ? '#a855f7' : '#c4b5fd'} stopOpacity="0.15" />
-            <stop offset="100%" stopColor={theme === 'dark' ? '#f472b6' : '#fbcfe8'} stopOpacity="0.15" />
+            <stop offset="0%" stopColor="#93c5fd" stopOpacity="0.15" />
+            <stop offset="50%" stopColor="#c4b5fd" stopOpacity="0.15" />
+            <stop offset="100%" stopColor="#fbcfe8" stopOpacity="0.15" />
           </linearGradient>
         </defs>
 
@@ -83,15 +81,9 @@ const WaveBackground = () => {
       </svg>
 
       {/* Floating Gradient Orbs */}
-      <div className={`absolute top-20 left-20 w-96 h-96 rounded-full blur-3xl opacity-20 animate-pulse ${
-        theme === 'dark' ? 'bg-blue-600' : 'bg-blue-400'
-      }`} style={{ animationDuration: '4s' }}></div>
-      <div className={`absolute top-40 right-20 w-80 h-80 rounded-full blur-3xl opacity-20 animate-pulse ${
-        theme === 'dark' ? 'bg-purple-600' : 'bg-purple-400'
-      }`} style={{ animationDuration: '6s', animationDelay: '1s' }}></div>
-      <div className={`absolute bottom-40 left-1/3 w-72 h-72 rounded-full blur-3xl opacity-20 animate-pulse ${
-        theme === 'dark' ? 'bg-pink-600' : 'bg-pink-400'
-      }`} style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
+      <div className="absolute top-20 left-20 w-96 h-96 rounded-full blur-3xl opacity-20 animate-pulse bg-blue-400" style={{ animationDuration: '4s' }}></div>
+      <div className="absolute top-40 right-20 w-80 h-80 rounded-full blur-3xl opacity-20 animate-pulse bg-purple-400" style={{ animationDuration: '6s', animationDelay: '1s' }}></div>
+      <div className="absolute bottom-40 left-1/3 w-72 h-72 rounded-full blur-3xl opacity-20 animate-pulse bg-pink-400" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
     </div>
   );
 };

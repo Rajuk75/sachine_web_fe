@@ -1,13 +1,11 @@
-import { useTheme } from "../context/ThemeContext";
 import { useLanguage } from "../context/LanguageContext";
 import PATHS from "../routes/paths";
 
 const Footer = () => {
-  const { theme } = useTheme();
   const { t } = useLanguage();
 
   return (
-    <footer className="footer" data-theme={theme}>
+    <footer className="footer">
       <div className="footer-inner">
         
         {/* Brand Section */}
@@ -100,12 +98,6 @@ const Footer = () => {
           border-top: 2px solid #e5e7eb;
         }
 
-        .footer[data-theme="dark"] {
-          background: linear-gradient(to bottom, #111827, #000000);
-          color: #ffffff;
-          border-top: 2px solid #374151;
-        }
-
         .footer-inner {
           max-width: 1280px;
           margin: 0 auto;
@@ -150,22 +142,11 @@ const Footer = () => {
           background-clip: text;
         }
 
-        .footer[data-theme="dark"] .footer-brand-name {
-          background: linear-gradient(135deg, #60a5fa, #a78bfa);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          background-clip: text;
-        }
-
         .footer-description {
           color: #6b7280;
           line-height: 1.7;
           margin-bottom: 20px;
           font-size: 15px;
-        }
-
-        .footer[data-theme="dark"] .footer-description {
-          color: #9ca3af;
         }
 
         .footer-vision {
@@ -191,18 +172,6 @@ const Footer = () => {
           line-height: 1.6;
         }
 
-        .footer[data-theme="dark"] .footer-vision {
-          background: rgba(59, 130, 246, 0.15);
-        }
-
-        .footer[data-theme="dark"] .footer-vision strong {
-          color: #60a5fa;
-        }
-
-        .footer[data-theme="dark"] .footer-vision p {
-          color: #9ca3af;
-        }
-
         .footer-social {
           display: flex;
           flex-direction: column;
@@ -215,10 +184,6 @@ const Footer = () => {
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.5px;
-        }
-
-        .footer[data-theme="dark"] .footer-social span {
-          color: #d1d5db;
         }
 
         .social-links {
@@ -253,10 +218,6 @@ const Footer = () => {
           letter-spacing: 0.5px;
         }
 
-        .footer[data-theme="dark"] .footer-heading {
-          color: #ffffff;
-        }
-
         .footer-links {
           list-style: none;
           padding: 0;
@@ -276,17 +237,9 @@ const Footer = () => {
           display: inline-block;
         }
 
-        .footer[data-theme="dark"] .footer-links a {
-          color: #9ca3af;
-        }
-
         .footer-links a:hover {
           color: #3b82f6;
           transform: translateX(4px);
-        }
-
-        .footer[data-theme="dark"] .footer-links a:hover {
-          color: #60a5fa;
         }
 
         .contact-info {
@@ -305,20 +258,12 @@ const Footer = () => {
           letter-spacing: 0.5px;
         }
 
-        .footer[data-theme="dark"] .contact-item strong {
-          color: #ffffff;
-        }
-
         .contact-item p {
           color: #6b7280;
           margin: 0;
           font-size: 14px;
           line-height: 1.6;
           font-weight: 500;
-        }
-
-        .footer[data-theme="dark"] .contact-item p {
-          color: #9ca3af;
         }
 
         .contact-link {
@@ -334,22 +279,9 @@ const Footer = () => {
           transform: translateX(2px);
         }
 
-        .footer[data-theme="dark"] .contact-link {
-          color: #60a5fa;
-        }
-
-        .footer[data-theme="dark"] .contact-link:hover {
-          color: #93c5fd;
-        }
-
         .footer-bottom {
           border-top: 2px solid #e5e7eb;
           background: #f3f4f6;
-        }
-
-        .footer[data-theme="dark"] .footer-bottom {
-          border-top: 2px solid #374151;
-          background: #0a0a0a;
         }
 
         .footer-bottom-inner {
@@ -367,10 +299,6 @@ const Footer = () => {
           font-weight: 600;
         }
 
-        .footer[data-theme="dark"] .footer-copy {
-          color: #9ca3af;
-        }
-
         .footer-legal {
           display: flex;
           gap: 24px;
@@ -384,16 +312,8 @@ const Footer = () => {
           transition: all 0.3s;
         }
 
-        .footer[data-theme="dark"] .footer-legal a {
-          color: #9ca3af;
-        }
-
         .footer-legal a:hover {
           color: #3b82f6;
-        }
-
-        .footer[data-theme="dark"] .footer-legal a:hover {
-          color: #60a5fa;
         }
 
         /* Mobile Responsive */

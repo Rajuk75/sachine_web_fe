@@ -1,33 +1,18 @@
-import { useTheme } from "../context/ThemeContext";
 const PageLoader = () => {
-  const { theme } = useTheme();
-
   return (
-    <div className={`min-h-screen flex items-center justify-center relative overflow-hidden ${
-      theme === 'dark' 
-        ? 'bg-gradient-to-br from-gray-900 via-slate-900 to-gray-900' 
-        : 'bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50'
-    }`}>
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Large Animated Orbs */}
-        <div className={`absolute -top-40 -left-40 w-96 h-96 rounded-full blur-3xl opacity-30 ${
-          theme === 'dark' ? 'bg-blue-600' : 'bg-blue-400'
-        }`} style={{ animation: 'float 6s ease-in-out infinite' }}></div>
-        <div className={`absolute top-1/2 -right-40 w-96 h-96 rounded-full blur-3xl opacity-30 ${
-          theme === 'dark' ? 'bg-purple-600' : 'bg-purple-400'
-        }`} style={{ animation: 'float 8s ease-in-out infinite', animationDelay: '1s' }}></div>
-        <div className={`absolute -bottom-40 left-1/3 w-96 h-96 rounded-full blur-3xl opacity-30 ${
-          theme === 'dark' ? 'bg-pink-600' : 'bg-pink-400'
-        }`} style={{ animation: 'float 7s ease-in-out infinite', animationDelay: '2s' }}></div>
+        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full blur-3xl opacity-30 bg-blue-400" style={{ animation: 'float 6s ease-in-out infinite' }}></div>
+        <div className="absolute top-1/2 -right-40 w-96 h-96 rounded-full blur-3xl opacity-30 bg-purple-400" style={{ animation: 'float 8s ease-in-out infinite', animationDelay: '1s' }}></div>
+        <div className="absolute -bottom-40 left-1/3 w-96 h-96 rounded-full blur-3xl opacity-30 bg-pink-400" style={{ animation: 'float 7s ease-in-out infinite', animationDelay: '2s' }}></div>
 
         {/* Floating Particles */}
         {[...Array(8)].map((_, i) => (
           <div
             key={i}
-            className={`absolute w-2 h-2 rounded-full ${
-              theme === 'dark' ? 'bg-blue-400' : 'bg-blue-500'
-            }`}
+            className="absolute w-2 h-2 rounded-full bg-blue-500"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -82,9 +67,7 @@ const PageLoader = () => {
 
         {/* Loading Text with Animation */}
         <div className="space-y-3 animate-fade-in" style={{ animationDelay: '0.3s' }}>
-          <p className={`text-xl font-bold ${
-            theme === 'dark' ? 'text-white' : 'text-gray-900'
-          }`}>
+          <p className="text-xl font-bold text-gray-900">
             Loading
             <span className="inline-flex ml-1">
               <span className="animate-bounce" style={{ animationDelay: '0s' }}>.</span>
@@ -92,9 +75,7 @@ const PageLoader = () => {
               <span className="animate-bounce" style={{ animationDelay: '0.3s' }}>.</span>
             </span>
           </p>
-          <p className={`text-sm font-medium ${
-            theme === 'dark' ? 'text-gray-400' : 'text-gray-600'
-          } animate-pulse`}>
+          <p className="text-sm font-medium text-gray-600 animate-pulse">
             Preparing your experience
           </p>
         </div>
@@ -104,9 +85,7 @@ const PageLoader = () => {
           {[0, 1, 2, 3, 4].map((i) => (
             <div
               key={i}
-              className={`w-2 h-2 rounded-full ${
-                theme === 'dark' ? 'bg-blue-500' : 'bg-blue-600'
-              }`}
+              className="w-2 h-2 rounded-full bg-blue-600"
               style={{
                 animation: 'bounce 1.4s ease-in-out infinite',
                 animationDelay: `${i * 0.16}s`

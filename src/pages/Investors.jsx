@@ -1,10 +1,8 @@
 import { useLanguage } from "../context/LanguageContext";
-import { useTheme } from "../context/ThemeContext";
 import PageTemplate from "../components/PageTemplate";
 
 const Investors = () => {
   const { t } = useLanguage();
-  const { theme } = useTheme();
 
   return (
     <PageTemplate
@@ -15,12 +13,12 @@ const Investors = () => {
       gradientFrom="purple"
       gradientTo="pink"
     >
-      <div className={`prose max-w-none ${theme === 'dark' ? 'prose-invert' : ''}`}>
+      <div className="prose max-w-none">
         <section className="mb-8">
-          <h2 className={`text-3xl font-bold mb-4 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+          <h2 className="text-3xl font-bold mb-4 text-gray-900">
             Investor Information
           </h2>
-          <p className={`text-lg leading-relaxed mb-6 ${theme === 'dark' ? 'text-gray-300' : 'text-gray-700'}`}>
+          <p className="text-lg leading-relaxed mb-6 text-gray-700">
             Welcome to our investor relations page. Here you'll find financial reports, company updates, and investment opportunities.
           </p>
         </section>
@@ -31,10 +29,10 @@ const Investors = () => {
             { icon: '📅', title: 'Events', desc: 'Upcoming investor meetings and calls' },
             { icon: '💼', title: 'Opportunities', desc: 'Investment and partnership opportunities' }
           ].map((item, idx) => (
-            <div key={idx} className={`p-6 rounded-xl text-center ${theme === 'dark' ? 'bg-gray-700/50' : 'bg-gray-50'}`}>
+            <div key={idx} className="p-6 rounded-xl text-center bg-gray-50">
               <div className="text-5xl mb-3">{item.icon}</div>
-              <h4 className={`text-xl font-bold mb-2 ${theme === 'dark' ? 'text-white' : 'text-gray-900'}`}>{item.title}</h4>
-              <p className={theme === 'dark' ? 'text-gray-300' : 'text-gray-600'}>{item.desc}</p>
+              <h4 className="text-xl font-bold mb-2 text-gray-900">{item.title}</h4>
+              <p className="text-gray-600">{item.desc}</p>
             </div>
           ))}
         </div>
