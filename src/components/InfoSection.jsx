@@ -156,7 +156,7 @@ const InfoSection = () => {
                     
                     {/* Yellow Badge */}
                     <div className="absolute top-1/2 -left-10 transform -translate-y-1/2 bg-[#dfff00] p-8 rounded-r-xl shadow-lg z-10">
-                       <h3 className="text-4xl font-bold text-dark mb-1">12</h3>
+                       <h3 className="text-4xl font-bold text-dark mb-1">1+</h3>
                        <p className="text-dark font-bold text-lg leading-tight">Year's <br/> <span className="text-sm font-normal">of experience</span></p>
                     </div>
 

@@ -6,10 +6,10 @@ const Investors = () => {
   const { t } = useLanguage();
 
   const stats = [
-    { label: 'Annual Revenue', value: '$50M+', change: '+25% YoY', color: 'green' },
-    { label: 'Global Clients', value: '500+', change: '+40% YoY', color: 'blue' },
-    { label: 'Market Share', value: '15%', change: '+5% YoY', color: 'purple' },
-    { label: 'Team Growth', value: '200+', change: '+30% YoY', color: 'pink' },
+    { label: 'Annual Revenue', value: '$10M+', change: '+25% YoY', color: 'green' },
+    { label: 'Global Clients', value: '100+', change: '+40% YoY', color: 'blue' },
+    { label: 'Domestic Clients', value: '500+', change: '+5% YoY', color: 'purple' },
+    { label: 'Team Growth', value: '100+', change: '+30% YoY', color: 'pink' },
   ];
 
   const resources = [
@@ -132,7 +132,7 @@ const Investors = () => {
       </div>
 
       {/* Investor Resources Grid */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
+      {/* <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-20">
         <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">Investor Resources</h2>
         <div className="grid md:grid-cols-2 gap-8">
           {resources.map((item, idx) => (
@@ -152,7 +152,7 @@ const Investors = () => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Contact IR */}
       <div className="max-w-4xl mx-auto px-4 text-center py-16 bg-gray-900 rounded-3xl relative overflow-hidden">

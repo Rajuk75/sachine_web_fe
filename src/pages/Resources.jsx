@@ -126,12 +126,12 @@ const Resources = () => {
       </div>
 
       {/* Newsletter Section */}
-      <div className="py-24 relative overflow-hidden" style={{
+      {/* <div className="py-24 relative overflow-hidden" style={{
           backgroundImage: 'radial-gradient(#e5e7eb 2px, transparent 2px)',
           backgroundSize: '30px 30px',
           backgroundColor: '#ffffff'
-      }}>
-        <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
+      }}> */}
+        {/* <div className="max-w-4xl mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Stay Ahead of the Curve
           </h2>
@@ -148,8 +148,8 @@ const Resources = () => {
               Subscribe
             </button>
           </div>
-        </div>
-      </div>
+        </div> */}
+      {/* </div> */}
 
     </div>
   );

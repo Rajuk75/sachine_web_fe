@@ -147,17 +147,17 @@ const HeroSection = () => {
                 </div>
               )
             },
-            {
-              name: 'Dream11',
-              component: (
-                <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">D</span>
-                  </div>
-                  <span className="text-lg font-bold text-gray-600">DREAM11</span>
-                </div>
-              )
-            },
+            // {
+            //   name: 'Dream11',
+            //   component: (
+            //     <div className="flex items-center space-x-2">
+            //       <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+            //         <span className="text-white font-bold text-sm">D</span>
+            //       </div>
+            //       <span className="text-lg font-bold text-gray-600">DREAM11</span>
+            //     </div>
+            //   )
+            // },
             {
               name: 'Groww',
               component: (
@@ -213,17 +213,17 @@ const HeroSection = () => {
                 </div>
               )
             },
-            {
-              name: 'Dream11',
-              component: (
-                <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">D</span>
-                  </div>
-                  <span className="text-lg font-bold text-gray-600">DREAM11</span>
-                </div>
-              )
-            },
+            // {
+            //   name: 'Dream11',
+            //   component: (
+            //     <div className="flex items-center space-x-2">
+            //       <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+            //         <span className="text-white font-bold text-sm">D</span>
+            //       </div>
+            //       <span className="text-lg font-bold text-gray-600">DREAM11</span>
+            //     </div>
+            //   )
+            // },
             {
               name: 'Groww',
               component: (
@@ -278,17 +278,17 @@ const HeroSection = () => {
                 </div>
               )
             },
-            {
-              name: 'Dream11',
-              component: (
-                <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">D</span>
-                  </div>
-                  <span className="text-lg font-bold text-gray-600">DREAM11</span>
-                </div>
-              )
-            },
+            // {
+            //   name: 'Dream11',
+            //   component: (
+            //     <div className="flex items-center space-x-2">
+            //       <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+            //         <span className="text-white font-bold text-sm">D</span>
+            //       </div>
+            //       <span className="text-lg font-bold text-gray-600">DREAM11</span>
+            //     </div>
+            //   )
+            // },
             {
               name: 'Groww',
               component: (
@@ -343,17 +343,17 @@ const HeroSection = () => {
                 </div>
               )
             },
-            {
-              name: 'Dream11',
-              component: (
-                <div className="flex items-center space-x-2">
-                  <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">D</span>
-                  </div>
-                  <span className="text-lg font-bold text-gray-600">DREAM11</span>
-                </div>
-              )
-            },
+            // {
+            //   name: 'Dream11',
+            //   component: (
+            //     <div className="flex items-center space-x-2">
+            //       <div className="w-6 h-6 bg-red-500 rounded-full flex items-center justify-center">
+            //         <span className="text-white font-bold text-sm">D</span>
+            //       </div>
+            //       <span className="text-lg font-bold text-gray-600">DREAM11</span>
+            //     </div>
+            //   )
+            // },
             {
               name: 'Groww',
               component: (

@@ -16,7 +16,7 @@ const Disclaimer = () => {
     >
       <div className="prose max-w-none text-gray-600">
         <p className="mb-4">
-          <strong>AdsHamper Pvt. Ltd.</strong> is a Digital Marketing Agency that offers Email Marketing, Web Solutions and Online Marketing Services in Bangalore and across India.
+          <strong>Adshamper Pvt. Ltd.</strong> is a Digital Marketing Agency that offers Email Marketing, Web Solutions and Online Marketing Services in Kolkata and across India.
         </p>
         <p className="mb-4">
           This page contains the terms and conditions of your usage of this website. By using this website you signify your agreement to these terms. AdsHamper reserve the right to modify the information presented on this website at any time without notice. Your continued access and use of this website following the posting of any changes shall be deemed your acceptance of such changes.

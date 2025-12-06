@@ -24,17 +24,17 @@ const BrandMarquee = () => {
         </div>
       )
     },
-    {
-      name: 'Dream11',
-      component: (
-        <div className="flex items-center space-x-2">
-          <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
-            <span className="text-white font-bold text-lg">D</span>
-          </div>
-          <span className="text-xl font-bold text-gray-900">DREAM11</span>
-        </div>
-      )
-    },
+    // {
+    //   name: 'Dream11',
+    //   component: (
+    //     <div className="flex items-center space-x-2">
+    //       <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+    //         <span className="text-white font-bold text-lg">D</span>
+    //       </div>
+    //       <span className="text-xl font-bold text-gray-900">DREAM11</span>
+    //     </div>
+    //   )
+    // },
     {
       name: 'Groww',
       component: (

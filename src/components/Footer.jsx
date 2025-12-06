@@ -11,13 +11,13 @@ const Footer = () => {
     <footer className="bg-white pt-20 pb-8 relative overflow-hidden">
         
         {/* Top CTA Section */}
-        <div className="max-w-4xl mx-auto px-4 text-center mb-16">
+        {/* <div className="max-w-4xl mx-auto px-4 text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Create Your Success Story</h2>
             <p className="text-gray-600 mb-8">Let's brainstorm about transforming your business operations and achieve remarkable results!</p>
             <a href="mailto:support@adshamper.com" className="inline-block bg-pink-500 text-white px-8 py-3 rounded-full font-bold hover:bg-pink-600 transition-colors shadow-lg hover:shadow-pink-200">
                 support@adshamper.com
             </a>
-        </div>
+        </div> */}
 
         {/* Floating Card Footer */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 mb-12">
@@ -54,7 +54,7 @@ const Footer = () => {
 
                     {/* Links Column 1 */}
                     <div>
-                        <h4 className="text-sm font-bold mb-6 text-gray-900 uppercase tracking-wider">Company</h4>
+                        <h4 className="text-sm font-bold mb-6 text-gray-900 uppercase tracking-wider">Quick Links</h4>
                         <ul className="space-y-3">
                             <li><Link to={PATHS.COMPANY} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">About Us</Link></li>
                             <li><Link to={PATHS.COMPANY} className="text-gray-600 hover:text-pink-600 text-sm transition-colors">Contact Us</Link></li>

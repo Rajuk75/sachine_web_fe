@@ -9,7 +9,7 @@ const Studio = () => {
   const filters = ['Brand', 'Country', 'Formats', 'Functionalities', 'Vertical'];
   
   const galleryItems = [
-    { id: 1, title: 'Dream11 Campaign', category: 'Sports', image: 'https://loremflickr.com/400/700/cricket,sports/all' },
+    // { id: 1, title: 'Dream11 Campaign', category: 'Sports', image: 'https://loremflickr.com/400/700/cricket,sports/all' },
     { id: 2, title: 'Zomato Cravings', category: 'Food', image: 'https://loremflickr.com/400/700/burger,food/all' },
     { id: 3, title: 'PayZapp Secure', category: 'Fintech', image: 'https://loremflickr.com/400/700/money,payment/all' },
     { id: 4, title: 'Deadpool Movie', category: 'Entertainment', image: 'https://loremflickr.com/400/700/movie,poster/all' },
