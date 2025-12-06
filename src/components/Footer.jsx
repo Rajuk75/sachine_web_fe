@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { FaPhone, FaUsers, FaWarehouse, FaQuestionCircle, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { MdLocationOn, MdEmail } from "react-icons/md";
 import PATHS from "../routes/paths";
+import { EXTERNAL_LINKS } from "../constants/externalLinks";
 
 const currentYear = new Date().getFullYear();
 
@@ -29,30 +30,32 @@ const Footer = () => {
                         <div className="flex items-center mb-8">
                             <img 
                                 className="h-20 w-auto object-contain" 
-                                src="/round logo.png" 
-                                alt="AdsHamper Logo" 
+                                src="/adshamper_logo-removebg-preview.png" 
+                                alt="Adshamper Logo" 
                                 loading="eager"
                             />
                         </div>
                         <p className="text-gray-600 text-sm leading-relaxed mb-8">
                             Adshamper Pvt. Ltd. is a dynamic marketing and advertising company based in Kolkata, India.
                         </p>
+
+
                         <div className="flex space-x-4">
-                            <a href="https://www.linkedin.com/company/adshamper/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
+                            <a href={EXTERNAL_LINKS.LINKEDIN} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-600 transition-colors">
                                 <FaLinkedin className="w-6 h-6" />
                             </a>
-                            {/* <a href="https://www.instagram.com/adshamper/" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600 transition-colors">
+                            {/* <a href={EXTERNAL_LINKS.INSTAGRAM} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-600 transition-colors">
                                 <FaInstagram className="w-6 h-6" />
                             </a> */}
                         </div>
                         <div className="mt-6 space-y-3">
                             <div className="flex items-center text-gray-600 text-sm">
                                 <MdEmail className="text-pink-500 mr-3 w-5 h-5" />
-                                <span>support@adshamper.com</span>
+                                <span>{EXTERNAL_LINKS.SUPPORT_EMAIL}</span>
                             </div>
                             <div className="flex items-center text-gray-600 text-sm">
                                 <FaPhone className="text-pink-500 mr-3 w-5 h-5" />
-                                <span>+91 9331156747</span>
+                                <span>{EXTERNAL_LINKS.PHONE}</span>
                             </div>
                         </div>
                     </div>

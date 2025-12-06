@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../context/LanguageContext";
 import { languages } from "../translations/translations";
 import PATHS from "../routes/paths";
+import { EXTERNAL_LINKS } from "../constants/externalLinks";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -21,21 +22,21 @@ const Navbar = () => {
   const currentLang = languages.find(lang => lang.code === language);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-0' : 'py-4'}`}>
-      <div className={`mx-auto transition-all duration-300 ${isScrolled ? 'max-w-full px-0' : 'max-w-7xl px-4 sm:px-6 lg:px-8'}`}>
-        <div className={`flex items-center justify-between transition-all duration-300 ${isScrolled ? 'py-2 px-6' : 'bg-white shadow-lg px-6 py-2 md:rounded-full rounded-none'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300 py-2`}>
+      <div className="w-full px-4 sm:px-6 lg:px-12">
+        <div className="flex items-center justify-between">
           
           {/* Logo */}
           <div className="flex-shrink-0 flex items-center gap-2 cursor-pointer" onClick={() => navigate(PATHS.HOME)}>
              <img 
                 src="/adshamper_logo-removebg-preview.png" 
-                alt="AdsHamper" 
-                className="h-16 w-auto object-contain" 
+                alt="Adshamper" 
+                className="h-20 w-auto object-contain" 
               />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-8 ml-auto mr-8">
             {[
               { label: "Home", path: PATHS.HOME },
               { label: "Services", path: PATHS.SOLUTIONS },
@@ -57,7 +58,7 @@ const Navbar = () => {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
              <button 
-                onClick={() => window.location.href = 'https://adshamper.com/user/login/'}
+                onClick={() => window.location.href = EXTERNAL_LINKS.LOGIN}
                 className="bg-yellow-400 text-dark px-8 py-2 rounded-full font-bold text-sm hover:bg-yellow-500 transition-colors flex items-center gap-2 shadow-md"
              >
                 Login <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
@@ -103,8 +104,10 @@ const Navbar = () => {
                   {item.label}
                 </button>
               ))}
+
+
               <button 
-                onClick={() => window.location.href = 'https://adshamper.com/user/login/'}
+                onClick={() => window.location.href = EXTERNAL_LINKS.LOGIN}
                 className="bg-yellow-400 text-dark px-6 py-3 rounded-full font-bold text-sm hover:bg-yellow-500 transition-colors w-full flex items-center justify-center gap-2"
               >
                 Login <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>

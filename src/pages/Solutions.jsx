@@ -1,40 +1,11 @@
 import React from 'react';
 import { useLanguage } from "../context/LanguageContext";
-import { RiDiscussLine, RiRobot2Line, RiBarChartGroupedLine, RiMoneyDollarCircleLine, RiArrowRightLine } from 'react-icons/ri';
+import { RiArrowRightLine } from 'react-icons/ri';
+import { SOLUTIONS_DATA } from '../data/solutionsData';
+import { EXTERNAL_LINKS } from '../constants/externalLinks';
 
 const Solutions = () => {
   const { t } = useLanguage();
-
-  const solutions = [
-    {
-      title: "Connect",
-      desc: "Instantly interface with customers using SMS, WhatsApp, and RCS for personalized, timely interactions. Leverage real-time messaging to optimize customer communication and deliver precise, data-driven responses.",
-      icon: <RiDiscussLine />,
-      color: "blue",
-      gradient: "from-blue-500 to-cyan-500"
-    },
-    {
-      title: "Automate",
-      desc: "Streamline your marketing workflows with intelligent automation. From welcome series to abandoned cart recovery, let our smart systems handle the repetitive tasks while you focus on strategy.",
-      icon: <RiRobot2Line />,
-      color: "pink",
-      gradient: "from-pink-500 to-rose-500"
-    },
-    {
-      title: "Analyze",
-      desc: "Gain deep insights into your campaign performance with our advanced analytics dashboard. Track ROI, engagement rates, and customer behavior in real-time to make informed decisions.",
-      icon: <RiBarChartGroupedLine />,
-      color: "purple",
-      gradient: "from-purple-500 to-indigo-500"
-    },
-    {
-      title: "Monetize",
-      desc: "Unlock new revenue streams with our monetization solutions. We help you identify opportunities and implement strategies that maximize the value of your digital assets.",
-      icon: <RiMoneyDollarCircleLine />,
-      color: "green",
-      gradient: "from-green-500 to-emerald-500"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -59,7 +30,7 @@ const Solutions = () => {
       <div className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="space-y-24">
-            {solutions.map((item, idx) => (
+            {SOLUTIONS_DATA.map((item, idx) => (
               <div 
                 key={idx} 
                 className={`flex flex-col md:flex-row items-center gap-12 md:gap-20 ${idx % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
@@ -111,10 +82,10 @@ const Solutions = () => {
             Let's discuss how our smart solutions can help you achieve your goals.
           </p>
           <a 
-            href="mailto:support@adshamper.com"
+            href={`mailto:${EXTERNAL_LINKS.SUPPORT_EMAIL}`}
             className="inline-block bg-gray-900 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-gray-800 transition-colors shadow-xl"
           >
-            support@adshamper.com
+            {EXTERNAL_LINKS.SUPPORT_EMAIL}
           </a>
         </div>
       </div>

@@ -1,38 +1,12 @@
 import React from 'react';
-import { FaBullhorn, FaChartLine, FaCogs, FaSyncAlt, FaChartBar, FaArrowRight, FaCheckCircle, FaPlay, FaChartPie, FaLaptopCode, FaSearchDollar, FaVrCardboard, FaMobile, FaDatabase } from 'react-icons/fa';
+import { FaArrowRight, FaCheckCircle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import PATHS from '../routes/paths';
 import RevealOnScroll from './ui/RevealOnScroll';
+import { HOME_SERVICES, DSP_FEATURES } from '../data/homeData';
+import { EXTERNAL_LINKS } from '../constants/externalLinks';
 
 const InfoSection = () => {
-  const services = [
-    {
-      title: 'Discover a high-value, fraud-free user base for your app',
-      desc: 'Leverage the power of intelligent advertising and target the most relevant audience for your brand with optimized creatives run post A/B testing to ensure real conversions',
-      icon: <FaBullhorn className="w-10 h-10 text-orange-500" />,
-    },
-    {
-      title: 'Acquire and Engage users at every step of your customer journey',
-      desc: 'Find your highest value user, analyse post-install behaviour and reduce customer acquisitions costs further down the funnel with a focus on higher user LTVs',
-      icon: <FaChartLine className="w-10 h-10 text-orange-500" />,
-      hasSeparator: true
-    },
-    {
-      title: 'Re-engage users with machine learning optimized creatives',
-      desc: 'Create extensive look-alike audiences, measure user interest and estimate likelihood of actions to retarget previously active and loyal users with our predictive machine learning',
-      icon: <FaCogs className="w-10 h-10 text-orange-500" />,
-      hasSeparator: true
-    }
-  ];
-
-  // Feature Data for About Us -- unchanged
-  const features = [
-    { text: 'Market Management', icon: <FaChartPie className="w-5 h-5 text-blue-600" />, bg: 'bg-blue-50' },
-    { text: 'Freelancing Training', icon: <FaLaptopCode className="w-5 h-5 text-purple-600" />, bg: 'bg-purple-50' },
-    { text: 'Business Analysis', icon: <FaSearchDollar className="w-5 h-5 text-green-600" />, bg: 'bg-green-50' },
-    { text: 'Augmented Reality', icon: <FaVrCardboard className="w-5 h-5 text-orange-600" />, bg: 'bg-orange-50' }
-  ];
-
   return (
     <section className="relative z-20 pb-0 pt-24 md:pt-32 bg-white overflow-hidden">
       
@@ -57,7 +31,7 @@ const InfoSection = () => {
               The all-in-one platform to grow your app
             </h2>
             <p className="text-gray-500 text-lg">
-               Launch more powerful, data-driven, custom-built campaigns to achieve <br className="hidden md:block"/> global growth with AdsHamper
+               Launch more powerful, data-driven, custom-built campaigns to achieve <br className="hidden md:block"/> global growth with Adshamper
             </p>
           </div>
         </RevealOnScroll>
@@ -72,7 +46,7 @@ const InfoSection = () => {
            </div>
 
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
-             {services.map((service, index) => (
+             {HOME_SERVICES.map((service, index) => (
                <RevealOnScroll key={index} className={`delay-${index * 100} h-full`}>
                  <div className="w-full h-full p-6 flex flex-col items-center text-center relative group">
                    
@@ -100,7 +74,7 @@ const InfoSection = () => {
         {/* Big Call-to-Action */}
         <RevealOnScroll>
           <div className="flex justify-center">
-            <a href="https://adshamper.com/user/register/" className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-blue-600 text-white text-lg font-bold shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition-all">
+            <a href={EXTERNAL_LINKS.REGISTER} className="inline-flex items-center gap-2 px-10 py-4 rounded-full bg-blue-600 text-white text-lg font-bold shadow-lg shadow-blue-500/30 hover:bg-blue-700 transition-all">
               Start your growth journey now <FaArrowRight />
             </a>
           </div>
@@ -158,7 +132,7 @@ const InfoSection = () => {
                     
                     {/* Yellow Badge */}
                     <div className="absolute top-1/2 -left-10 transform -translate-y-1/2 bg-[#dfff00] p-8 rounded-r-xl shadow-lg z-10">
-                       <h3 className="text-4xl font-bold text-dark mb-1">1+</h3>
+                       <h3 className="text-4xl font-bold text-dark mb-1">5+</h3>
                        <p className="text-dark font-bold text-lg leading-tight">Year's <br/> <span className="text-sm font-normal">of experience</span></p>
                     </div>
 
@@ -195,18 +169,7 @@ const InfoSection = () => {
                 </h3>
 
                 <div className="space-y-3 mb-10">
-                  {[
-                    'AI based high-value user targeting and acquisition',
-                    'Global Scale',
-                    'CPI & CPA optimisation',
-                    'Creative Optimization',
-                    'Fraud Prevention',
-                    '100% Transparency with dashboard access',
-                    'Real-time tracking and performance reports',
-                    'Agile Machine Learning and DSP developments',
-                    'Integration with 40+ major ad exchanges',
-                    'Specialised campaigns for all your goals'
-                  ].map((item, i) => (
+                  {DSP_FEATURES.map((item, i) => (
                     <div key={i} className="flex items-start gap-3">
                       <FaCheckCircle className="text-[#dfff00] w-5 h-5 flex-shrink-0 mt-1" />
                       <span className="text-blue-50 text-sm leading-relaxed">{item}</span>

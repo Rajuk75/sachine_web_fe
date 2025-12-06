@@ -44,7 +44,7 @@ const TermsOfService = () => {
                 Agreement to Terms
               </h2>
               <p className="mb-4 leading-relaxed text-gray-700">
-                By accessing and using the AdsHampers website and services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
+                By accessing and using the Adshamper website and services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing this site.
               </p>
             </section>
 
@@ -77,7 +77,7 @@ const TermsOfService = () => {
                 While every effort is made to ensure the accuracy of information offered on these pages, we shall have no liability for errors, omissions or inadequacies in the information contained herein. This website could include inaccuracies or out-dated information and is subject to change at any time without notice.
               </p>
               <p className="mb-4 leading-relaxed text-gray-700">
-                Your use of this website is at your own risk. You agree to hold AdsHampersharmless from and not sue AdsHampersfor any claims based upon using this website.
+                Your use of this website is at your own risk. You agree to hold Adshamper sharmless from and not sue Adshamper for any claims based upon using this website.
               </p>
             </section>
 
@@ -88,10 +88,10 @@ const TermsOfService = () => {
               </h2>
               <div className="p-4 rounded-lg bg-yellow-50 border border-yellow-200">
                 <p className="mb-4 leading-relaxed font-semibold text-gray-800">
-                  THE INFORMATION, DOCUMENTATION, SOFTWARE, PRODUCTS, AND SERVICES CONTAINED ON THE AdsHampersWEBSITE ARE PROVIDED "AS IS" WITHOUT ANY WARRANTY OF ANY KIND.
+                  THE INFORMATION, DOCUMENTATION, SOFTWARE, PRODUCTS, AND SERVICES CONTAINED ON THE Adshamper WEBSITE ARE PROVIDED "AS IS" WITHOUT ANY WARRANTY OF ANY KIND.
                 </p>
                 <p className="mb-4 leading-relaxed text-gray-700">
-                  AdsHampersAND ITS SUPPLIERS DISCLAIM ALL WARRANTIES RELATING TO THE INFORMATION, DOCUMENTATION, SOFTWARE, PRODUCTS, AND SERVICES CONTAINED ON THE AdsHampersWEBSITE, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTIES AGAINST INFRINGEMENT OF THIRD PARTY RIGHTS, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+                  Adshamper AND ITS SUPPLIERS DISCLAIM ALL WARRANTIES RELATING TO THE INFORMATION, DOCUMENTATION, SOFTWARE, PRODUCTS, AND SERVICES CONTAINED ON THE Adshamper WEBSITE, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, ANY WARRANTIES AGAINST INFRINGEMENT OF THIRD PARTY RIGHTS, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
                 </p>
               </div>
             </section>
@@ -102,7 +102,7 @@ const TermsOfService = () => {
                 Limitation of Liability
               </h2>
               <p className="mb-4 leading-relaxed text-gray-700">
-                AdsHampersSHALL NOT BE LIABLE FOR DAMAGES, WHETHER DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL, AS A RESULT OF THE REPRODUCTION, MODIFICATION, DISTRIBUTION OR USE OF THE INFORMATION, DOCUMENTATION, SOFTWARE, PRODUCTS AND SERVICES.
+                Adshamper SHALL NOT BE LIABLE FOR DAMAGES, WHETHER DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL, AS A RESULT OF THE REPRODUCTION, MODIFICATION, DISTRIBUTION OR USE OF THE INFORMATION, DOCUMENTATION, SOFTWARE, PRODUCTS AND SERVICES.
               </p>
               <p className="mb-4 leading-relaxed text-gray-700">
                 Some states or jurisdictions do not allow the exclusion of implied warranties or limitations on how long an implied warranty may last, so the above limitations may not apply to you.
